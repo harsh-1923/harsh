@@ -1,0 +1,56 @@
+.processing-button-wrap {
+  outline: none;
+  border: none;
+  overflow: hidden;
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.processing-button-wrap:focus {
+  outline: 1px solid #1994ff;
+  outline-offset: 3px;
+}
+
+.processing-button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.processing-button-inner span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.16);
+  font-size: 16px;
+}
+
+.loader {
+  animation: rotate 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.processing-button-check,
+.processing-button-alert {
+  margin-right: 10px;
+  animation: grow 200ms ease-out;
+}
+
+@keyframes grow {
+  from {
+    scale: 0.6;
+  }
+}

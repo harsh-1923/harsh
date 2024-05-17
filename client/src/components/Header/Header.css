@@ -1,0 +1,17 @@
+.header-wrap {
+  width: 100%;
+}
+
+.signature {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: sign 2.4s ease-out;
+  transform: rotate(23deg);
+  stroke: red;
+}
+
+@keyframes sign {
+  from {
+    stroke-dashoffset: 1000;
+  }
+}

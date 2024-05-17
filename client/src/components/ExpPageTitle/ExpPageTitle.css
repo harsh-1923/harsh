@@ -1,0 +1,35 @@
+.exp-page-title-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--gap-xl) 0 var(--gap-md) 0;
+}
+
+.exp-page-title > p {
+  font-size: 22px;
+  font-weight: 500;
+  padding-bottom: -5px;
+}
+
+.exp-page-link-button {
+  background-color: var(--gray-1);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-page-link-button:hover {
+  outline: 1px solid var(--gray-5);
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,150 @@
+.timeline-ctr {
+  position: relative;
+  border-radius: var(--gap-md);
+}
+
+.timeline-wrap {
+  --month-width: 2px;
+  --week-height: 12px;
+  --month-height: 20px;
+  --week-gap: 15px;
+
+  padding-left: 200px;
+
+  width: 100%;
+  height: 100%;
+  border-radius: var(--gap-md);
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  position: relative;
+}
+
+.timeline-gradient {
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  left: -1px;
+  top: 0;
+  z-index: 30;
+  background-image: linear-gradient(to right, var(--bg), transparent);
+  content: "";
+}
+
+@media (width < 500px) {
+  .timeline-gradient {
+    width: 30px;
+  }
+}
+
+.timeline {
+  width: 100%;
+  min-height: 300px;
+  width: fit-content;
+  margin: auto 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+
+.timeline-item {
+  width: 100%;
+  min-height: 100px;
+  margin-right: 30px;
+  display: inline-block;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.months {
+  display: flex;
+}
+
+.month {
+  display: flex;
+}
+
+.month-marker {
+  width: var(--month-width);
+  height: var(--month-height);
+  margin-right: var(--week-gap);
+  border-radius: 2px;
+  position: relative;
+}
+
+.month-marker::after {
+  content: attr(data-month);
+  position: absolute;
+  top: 40px;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.week-marker {
+  width: var(--month-width);
+  height: var(--week-height);
+  opacity: 0.7;
+  margin-right: var(--week-gap);
+  border-radius: 2px;
+}
+
+.timeline-item-content {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.airbus-item {
+  width: 100%;
+  min-height: 80px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.airbus-item-header {
+  top: 10px;
+  left: 60px;
+}
+
+.airbus-item-content {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+}
+
+.timeline-phase {
+  font-size: 14px;
+  white-space: wrap;
+  position: relative;
+  margin-right: 5px;
+  background-color: var(--gray-2);
+  color: var(--gray-12);
+  padding: var(--gap-md) 0 var(--gap-md) 8px;
+  border-radius: 5px;
+  position: relative;
+  outline: 1px solid var(--gray-4);
+  min-height: 104px;
+  color: var(--gray-11);
+}
+
+.phase-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  border-radius: 5px 0px 0px 5px;
+}

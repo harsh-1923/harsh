@@ -1,0 +1,15 @@
+.exp-slider-wrap {
+  max-width: var(--page-max-width);
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+  margin-right: 10px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 20px;
+}
+
+.exp-slider-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}

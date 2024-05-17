@@ -1,0 +1,15 @@
+.processing-page-button {
+  width: 100%;
+}
+
+.processing-button-demo-wrap {
+  width: 100%;
+  background-color: var(--gray-1);
+  min-height: 400px;
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

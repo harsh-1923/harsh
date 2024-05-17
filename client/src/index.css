@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS  */
+  --gray-1: #111111;
+  --gray-2: #191919;
+  --gray-3: #222222;
+  --gray-4: #2a2a2a;
+  --gray-5: #313131;
+  --gray-6: #3a3a3a;
+  --gray-7: #484848;
+  --gray-8: #606060;
+  --gray-9: #6e6e6e;
+  --gray-10: #7b7b7b;
+  --gray-11: #b4b4b4;
+  --gray-12: #eeeeee;
+
+  --bg: #080808;
+
+  --processing-state-blue: #104d87;
+  --processing-state-blue-bg: #7cd3ffef;
+
+  --accent-blue: #1994ff;
+
+  /* GAPS  */
+
+  --gap-xs: 8px;
+  --gap-md: 16px;
+  --gap-xl: 32px;
+  --gap-xxl: 48px;
+  --page-max-width: 900px;
+  --page-mobile-padding: var(--gap-md);
+
+  /* BORDERS AND OUTLINES  */
+
+  --outline: 1px solid var(--gray-3);
+  --outline-dashed: 1px dashed var(--gray-5);
+
+  /* BG AND COLOR */
+
+  background-color: var(--bg);
+  color: var(--gray-12);
+
+  /* FONT */
+
+  font-family: "Figtree", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* REMOVE SCROLL BOUNCE  */
+
+  overscroll-behavior: none !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: rgb(171, 202, 255);
+  color: black;
+}
+
+.filler {
+  height: 100vh;
+}

@@ -1,0 +1,123 @@
+.hero-section-wrap {
+  --bg-duration: 15s;
+  width: 100%;
+  min-height: 400px;
+
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: var(--gap-xs);
+  background-position: top left;
+  outline: 20px solid var(--bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: movebg var(--bg-duration) ease-in-out infinite alternate;
+  z-index: -100;
+}
+
+@media (width < 600px) {
+  .hero-section-wrap {
+    --bg-duration: 30s;
+  }
+}
+
+@keyframes movebg {
+  to {
+    background-position: bottom right;
+  }
+}
+
+.hero-section-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0), #080808 70%);
+}
+
+.hero-section-content {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-section-header {
+  width: 100%;
+  text-align: center;
+  font-size: 4.5em;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  text-wrap: balance;
+  overflow: hidden;
+  padding-bottom: 2px;
+}
+
+@media (width < 600px) {
+  .hero-section-header {
+    font-size: 38px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+}
+
+.hero-section-tagline {
+  width: 100%;
+  text-align: center;
+  padding-top: var(--gap-md);
+  font-size: 30px;
+  text-wrap: balance;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 100;
+
+  background-image: linear-gradient(
+    to bottom,
+    white,
+    rgba(255, 255, 255, 0.352)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-section-cta {
+  height: 40px;
+  width: 120px;
+  margin-top: var(--gap-xl);
+  border-radius: 40px;
+  outline: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(to bottom, white, rgba(230, 230, 230, 0.661));
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.08) inset,
+    0px 1px 1.5px 0px rgba(0, 0, 0, 0.32), 0px 0px 0px 0.5px var(--gray-9);
+  color: black;
+  cursor: pointer;
+}
+
+.hero-section-cta:focus {
+  outline: 1px solid lightblue;
+  outline-offset: 3px;
+}
+
+@media (width < 600px) {
+  .hero-section-tagline {
+    font-size: 24px;
+  }
+}
