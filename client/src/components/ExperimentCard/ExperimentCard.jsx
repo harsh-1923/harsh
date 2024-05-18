@@ -17,6 +17,7 @@ const ExperimentCard = ({ title = "Processing Buttons", tag, src, link }) => {
             showControls="false"
             controlsList="nofullscreen"
             disablePictureInPicture
+            playsInline
           />
         </div>
         <div className="exp-card-info-wrap">
