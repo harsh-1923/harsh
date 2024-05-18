@@ -24,7 +24,7 @@ const experiments = [
   {
     title: "System Status",
     link: "/exp/system-status",
-    tag: "Dashboard widget for quick glance and system status logs",
+    tag: "System status dashboard widget",
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/System_Status.mp4",
   },
 

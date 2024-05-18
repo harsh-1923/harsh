@@ -13,7 +13,10 @@ const ExperimentCard = ({ title = "Processing Buttons", tag, src, link }) => {
             src={src}
             autoPlay
             loop
+            muted
             showControls="false"
+            controlsList="nofullscreen"
+            disablePictureInPicture
           />
         </div>
         <div className="exp-card-info-wrap">
