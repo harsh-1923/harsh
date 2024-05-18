@@ -1,103 +1,206 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./VercelFeedback.css";
-import { Smile, Check, Frown, Meh } from "lucide-react";
+import { Smile, Check, Loader, Frown, Meh } from "lucide-react";
+import { Toaster, toast } from "sonner";
 
-const VercelFeedback = ({}) => {
-  const [isFeedbackActive, setIsFeedbackActive] = useState(false);
-  const [animationDuration, setAnimationDuration] = useState(0.3);
-  const [submitted, setSubmitted] = useState(false);
+import useMeasure from "react-use-measure";
 
-  const [expanded, setExpanded] = useState(false);
+import { motion, AnimatePresence } from "framer-motion";
 
-  const [submitting, setSubmitting] = useState(false);
+const VercelFeedback = () => {
+  const [state, setState] = useState("inactive");
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [feedback, setFeedback] = useState("");
+  const [data, setData] = useState({ mood: null, feedback: "" });
 
-  const textAreaRef = useRef(null);
+  const [selectedMood, setSelectedMood] = useState(null);
 
-  const expandFeedback = () => {
-    setExpanded(true);
-    setIsFeedbackActive(true);
+  const [ref, bounds] = useMeasure();
+  const textAreaRef = useRef();
+
+  useEffect(() => {
+    if (state === "active" && textAreaRef.current) {
+      textAreaRef.current.focus();
+    }
+  }, [state]);
+
+  const feedbackVars = {
+    inactive: { width: "250px", height: "54px" },
+    active: {
+      width: "340px",
+      height: bounds.height,
+      borderRadius: "8px",
+      outline: "1px solid var(--gray-6)",
+    },
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const textAreaVariants = {
+    inactive: {
+      opacity: 0,
+      filter: "blur(2px)",
+      y: -20,
+    },
+    active: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+    },
+  };
 
-    setSubmitting(true);
+  const handleSend = async () => {
+    setIsSending(!isSending);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setSubmitted(true);
+    setTimeout(() => {
+      setIsSending(false);
+      setSent(true);
+    }, 2000);
 
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
-    setExpanded(false);
-    await new Promise((resolve) => setTimeout(resolve, 200));
-    setSubmitted(false);
-    setSubmitting(false);
+    await new Promise((resolve) => setTimeout(resolve, 4000));
+    setData({ mood: selectedMood, feedback: feedback });
+    toast(`<p>Sent to "/api/v1/feedback<p> <br/> ${JSON.stringify(data)}`);
+    setState("inactive");
+    setSent(false);
+    setData({ mood: "", feedback: "" });
+    setFeedback("");
   };
 
   return (
-    <div data-expanded={`${expanded ? "true" : "false"}`} className="vf-wrap">
-      <div className="vf-header-wrap">
-        Was this helpful?
-        <button onClick={() => expandFeedback()} className="smiley-icons">
-          <Smile
-            color="#49de80"
-            className="feedback-smile"
-            strokeWidth={2}
-            size={16}
-          />
-        </button>
-        <button onClick={() => expandFeedback()} className="smiley-icons">
-          <Meh
-            color="yellow"
-            className="feedback-smile"
-            strokeWidth={2}
-            size={16}
-          />
-        </button>
-        <button onClick={() => expandFeedback()} className="smiley-icons">
-          <Frown
-            color="orangered"
-            className="feedback-smile"
-            strokeWidth={2}
-            size={16}
-          />
-        </button>
-      </div>
-      {!submitted ? (
-        <form onSubmit={handleSubmit} className="vf-form-wrap">
-          <textarea
-            data-active={`${isFeedbackActive ? "active" : ""}`}
-            focus="true"
-            ref={textAreaRef}
-            type="text"
-            className="vf-feedback-input"
-            placeholder="Your feedback..."
-          />
-
-          <div className="feedback-error-response" />
-          <div className="feedback-button-wrap">
+    <motion.div
+      variants={feedbackVars}
+      initial={"inactive"}
+      animate={state === "active" ? "active" : "inactive"}
+      className="vercel-feedback-wrap"
+      transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
+      tabIndex={0}
+    >
+      <div ref={ref} className="vercel-feedback-inner">
+        <div className="vercel-feedback-header">
+          <span>Was this helpful?</span>
+          <div className="vercel-feedback-icons">
             <button
-              type="submit"
-              className="vf-feedback-submit"
-              onClick={handleSubmit}
+              data-selected-mood={
+                selectedMood ? (selectedMood === 0 ? "true" : "false") : "false"
+              }
+              onClick={() => {
+                setState("active");
+                setSelectedMood(0);
+              }}
+              className="vercel-feedback-icon-button"
             >
-              {submitting ? (
-                <div className="feedback-spinner loader" />
-              ) : (
-                "Send"
-              )}
+              <Smile
+                className="vercel-feedback-icon"
+                size={16}
+                color="#49de80"
+                strokeWidth={2}
+              />
+            </button>
+            <button
+              data-selected-mood={
+                selectedMood ? (selectedMood === 1 ? "true" : "false") : "false"
+              }
+              onClick={() => {
+                setState("active");
+                setSelectedMood(1);
+              }}
+              className="vercel-feedback-icon-button"
+            >
+              <Meh
+                className="vercel-feedback-icon"
+                size={16}
+                color="#49de80"
+                strokeWidth={2}
+              />
+            </button>
+            <button
+              data-selected-mood={
+                selectedMood ? (selectedMood === 2 ? "true" : "false") : "false"
+              }
+              onClick={() => {
+                setState("active");
+                setSelectedMood(2);
+              }}
+              className="vercel-feedback-icon-button"
+            >
+              <Frown
+                className="vercel-feedback-icon"
+                size={16}
+                color="#49de80"
+                strokeWidth={2}
+              />
             </button>
           </div>
-        </form>
-      ) : (
-        <div className="success">
-          <Check strokeWidth={4} size={20} className="feedback-checkicon" />
-          <p>Your feedback has been recieved.</p>
-          <p className="basic-text">Thanks for helping</p>
         </div>
-      )}
-    </div>
+        {sent ? (
+          <div className="vercel-feedback-send-success">
+            <motion.div
+              className="vercel-feedback-send-success"
+              initial={{ y: 75, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -25, opacity: 0 }}
+              transition={{ duration: 0.2, type: "spring", bouce: 0.6 }}
+            >
+              <Check
+                strokeWidth={3}
+                size={26}
+                color={"#0070f3"}
+                style={{ marginBottom: "20px" }}
+              />
+              <p>Your feedback has been recieved.</p>
+              <p>Thanks for helping</p>
+            </motion.div>
+          </div>
+        ) : (
+          <motion.div
+            variants={textAreaVariants}
+            initial={"inactive"}
+            animate={state === "active" ? "active" : "inactive"}
+            className="vercel-feeback-form-wrap"
+          >
+            <textarea
+              ref={textAreaRef}
+              className="vercel-feeback-input"
+              placeholder="Your feedback..."
+              value={feedback}
+              onChange={(e) => setFeedback(e.target.value)}
+            />
+            <motion.div layout className="vercel-feeback-option-tray">
+              <button className="vercel-feeback-button" onClick={handleSend}>
+                <AnimatePresence initial={false} mode="wait">
+                  {isSending ? (
+                    <motion.span
+                      initial={{ y: -25, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 25, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      key="sending"
+                    >
+                      <Loader
+                        className="vercel-feedback-loader"
+                        size={18}
+                        strokeWidth={2}
+                      />
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      initial={{ y: -25, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 25, opacity: 0 }}
+                      transition={{ duration: 0.1 }}
+                      key="send"
+                    >
+                      Send
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
+    </motion.div>
   );
 };
 

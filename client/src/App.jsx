@@ -10,6 +10,8 @@ import SystemStatusPage from "./pages/Experiments/SystemStatusPage/SystemStatusP
 import AppleNotesMenuPage from "./pages/Experiments/AppleNotesMenuPage/AppleNotesMenuPage";
 import TabSwitcherPage from "./pages/Experiments/TabSwitcherPage/TabSwitcherPage";
 
+import { Toaster, toast } from "sonner";
+
 const routes = [
   { path: "/", element: <HomePage /> },
   { path: "/exp/dynamic-button", element: <ProcessingButtonPage /> },
@@ -25,6 +27,12 @@ function App() {
   return (
     <main className="app">
       <Header />
+      <Toaster
+        richColors
+        toastOptions={{
+          className: "toast",
+        }}
+      />
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />

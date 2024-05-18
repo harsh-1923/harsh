@@ -13,3 +13,11 @@
 .basic-text-muted {
   color: var(--gray-11);
 }
+.toast {
+  background-color: var(--gray-2);
+  outline: 1px solid var(--gray-5);
+  border: none !important;
+  color: var(--gray-12);
+  padding: var(--gap-md);
+  min-height: 60px;
+}
