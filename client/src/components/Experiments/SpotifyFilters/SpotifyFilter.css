@@ -1,0 +1,44 @@
+.filter-group {
+  --filter-unselected: #25482d;
+  --filter-selected: #3a904a;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  user-select: none;
+}
+
+.filter {
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  cursor: pointer;
+  margin-right: 8px;
+  background-color: var(--filter-unselected);
+  color: var(--text-primary);
+  border: none;
+  transition: all 100ms ease-in-out;
+  text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.16);
+}
+
+.filter:where([data-state="true"]) {
+  opacity: 1 !important;
+  background-color: var(--filter-selected);
+}
+
+.filter:where([data-state="true"]) + .filter:where([data-state="true"]) {
+  padding-left: 16px;
+  margin-left: -25px;
+  background-color: var(--filter-selected);
+  border-left: 1px solid var(--filter-selected);
+  border-radius: 0px 20px 20px 0px;
+}
+
+.filter:focus {
+  outline: none !important;
+}
+
+@media (width < 400) {
+  .filter-group {
+    width: 100%;
+  }
+}

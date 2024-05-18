@@ -1,0 +1,20 @@
+.is-wrap {
+  --gap: 20px;
+  --duration: 2000ms;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  overflow: hidden;
+  transition: all 1s ease-in;
+  white-space: nowrap;
+}
+
+.is-span {
+  animation: scroll var(--duration) linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}

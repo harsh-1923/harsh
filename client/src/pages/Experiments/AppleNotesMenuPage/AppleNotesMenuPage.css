@@ -1,0 +1,23 @@
+.apn-page-wrap {
+  width: 100%;
+}
+
+.apn-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--gray-1);
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gap-xl) 0;
+}
+
+@media (width < 550px) {
+  .apn-demo-wrap {
+    background-color: var(--bg);
+    outline: none;
+  }
+}

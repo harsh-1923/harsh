@@ -9,3 +9,7 @@
   max-width: var(--page-max-width);
   margin: 0 auto;
 }
+
+.basic-text-muted {
+  color: var(--gray-11);
+}

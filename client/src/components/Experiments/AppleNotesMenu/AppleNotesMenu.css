@@ -1,0 +1,159 @@
+.apple-note-menu-wrap {
+  width: 380px;
+}
+
+.apm-mobile-frame {
+  background-color: var(--gray-1);
+  width: 380px;
+  height: 450px;
+  position: relative;
+  border-left: 15px solid black;
+  border-right: 15px solid black;
+  border-bottom: 15px solid black;
+  border-radius: 0px 0px 60px 60px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.apm-mobile-frame > small {
+  padding: 5px 10px;
+  display: inline-block;
+  color: var(--gray-8);
+  user-select: none;
+}
+
+.apm-mobile-menu {
+  position: absolute;
+  bottom: 250px;
+  height: 40px;
+  background-color: var(--gray-3);
+  width: 100%;
+  transition: all 250ms ease-in-out;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apm-mobile-menu-option {
+  width: calc(100% - 77px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apm-mobile-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.apm-mobile-option-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.apm-mobile-frame-option-icon {
+  width: 22px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 300px;
+  right: 12px;
+  transition: all 250ms ease-in-out;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--gray-3);
+  background-color: transparent;
+}
+
+.apm-mobile-frame-keyboard {
+  width: 100%;
+  background-color: var(--gray-3);
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  touch-action: none;
+  user-select: none;
+}
+
+.apm-mobile-frame-app-switcher {
+  position: absolute;
+  content: "";
+  bottom: 5px;
+  background-color: white;
+  width: 150px;
+  height: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  transition: all 150ms bounce;
+  z-index: 10;
+}
+
+.apm-mobile-frame-keyboard-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 5px 10px;
+}
+
+.apm-mobile-frame-key {
+  background-color: var(--gray-6);
+  display: flex;
+  width: 30px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
+.keyboard-row-2 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.apm-mobile-frame-keyboard-suggestions-row {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+}
+
+.apm-mobile-frame-keyboard-suggestion {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--gray-5);
+}
+
+.apm-mobile-frame-keyboard-suggestion:last-child {
+  border-right: none;
+}
+
+.apm-mobile-frame-mic {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  scale: 1.1;
+}
+
+.apm-mobile-frame-emoji {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  scale: 1.1;
+}

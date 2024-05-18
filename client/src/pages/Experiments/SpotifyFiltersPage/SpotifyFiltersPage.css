@@ -1,0 +1,15 @@
+.sf-page-wrap {
+  width: 100%;
+}
+
+.sf-demo-wrap {
+  background-color: var(--gray-1);
+  width: 100%;
+  min-height: 400px;
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -24,7 +24,9 @@ const HeroSection = () => {
           technologies.
         </p>
 
-        <button className="hero-section-cta">Get in touch</button>
+        <button className="hero-section-cta reveal-animation">
+          Get in touch
+        </button>
       </div>
     </div>
   );

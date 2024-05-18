@@ -1,0 +1,26 @@
+.ss-page-wrap {
+  width: 100%;
+}
+
+.ss-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--gray-1);
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+
+@media (width < 600px) {
+  .ss-demo-wrap {
+    background-color: var(--bg);
+    outline: none;
+    min-height: 0;
+    margin-top: 80px;
+  }
+}

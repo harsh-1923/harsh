@@ -1,0 +1,15 @@
+.tab-switcher-page-wrap {
+  width: 100%;
+}
+
+.tab-switcher-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+  background-color: var(--gray-1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

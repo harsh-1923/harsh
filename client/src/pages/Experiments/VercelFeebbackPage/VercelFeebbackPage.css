@@ -1,0 +1,16 @@
+.vf-page-wrap {
+  width: 100%;
+}
+
+.vf-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+
+  background-color: var(--gray-1);
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
