@@ -10,6 +10,12 @@ const experiments = [
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/ProcessingButton.mp4",
   },
   {
+    title: "Vercel Feedback",
+    link: "/exp/vercel-feedback",
+    tag: "Feedback forms from Vercel.",
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/Vercel_Feedback.mp4",
+  },
+  {
     title: "Spotify Filters",
     link: "/exp/spotify-filters",
     tag: "Filters from Spotify Web.",

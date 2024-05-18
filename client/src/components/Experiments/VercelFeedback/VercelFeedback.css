@@ -29,8 +29,12 @@
   height: 25px;
   outline: none;
   border: none;
-  background-color: transparent;
+  background-color: var(--bg);
   cursor: pointer;
+}
+
+button[data-selected-mood="true"] {
+  background-color: rgba(103, 128, 239, 0.42);
 }
 
 .vercel-feeback-input {
@@ -56,8 +60,6 @@
   align-items: center;
   justify-content: flex-end;
   outline: 1px solid var(--gray-5);
-
-  /* padding-bottom: 5px; */
 }
 
 .vercel-feeback-button {
@@ -75,10 +77,6 @@
   overflow: hidden;
 }
 
-button[data-selected-mood="true"] {
-  background-color: rgba(173, 216, 230, 0.384);
-}
-
 .vercel-feeback-button span {
   display: flex;
   align-items: center;
@@ -94,9 +92,12 @@ button[data-selected-mood="true"] {
 /* ------SUCCESS------- */
 .vercel-feedback-send-success {
   width: 100%;
-  min-height: 152px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-direction: column;
+
+  height: 120px;
 }

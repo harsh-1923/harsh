@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./VercelFeedback.css";
 import { Smile, Check, Loader, Frown, Meh } from "lucide-react";
-import { Toaster, toast } from "sonner";
 
 import useMeasure from "react-use-measure";
 
@@ -13,7 +12,6 @@ const VercelFeedback = () => {
   const [sent, setSent] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState({ mood: null, feedback: "" });
-
   const [selectedMood, setSelectedMood] = useState(null);
 
   const [ref, bounds] = useMeasure();
@@ -21,7 +19,7 @@ const VercelFeedback = () => {
 
   useEffect(() => {
     if (state === "active" && textAreaRef.current) {
-      textAreaRef.current.focus();
+      if (window.innerWidth > 500) textAreaRef.current.focus();
     }
   }, [state]);
 
@@ -38,7 +36,7 @@ const VercelFeedback = () => {
   const textAreaVariants = {
     inactive: {
       opacity: 0,
-      filter: "blur(2px)",
+      filter: "blur(4px)",
       y: -20,
     },
     active: {
@@ -53,14 +51,13 @@ const VercelFeedback = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setTimeout(() => {
-      setIsSending(false);
-      setSent(true);
-    }, 2000);
+    setIsSending(false);
+    setSelectedMood(null);
+    setSent(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     setData({ mood: selectedMood, feedback: feedback });
-    toast(`<p>Sent to "/api/v1/feedback<p> <br/> ${JSON.stringify(data)}`);
+    // toast(`<p>Sent to "/api/v1/feedback<p> <br/> ${JSON.stringify(data)}`);
     setState("inactive");
     setSent(false);
     setData({ mood: "", feedback: "" });
@@ -73,7 +70,7 @@ const VercelFeedback = () => {
       initial={"inactive"}
       animate={state === "active" ? "active" : "inactive"}
       className="vercel-feedback-wrap"
-      transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
+      transition={{ type: "spring", duration: 0.3, bounce: 0 }}
       tabIndex={0}
     >
       <div ref={ref} className="vercel-feedback-inner">
@@ -82,24 +79,7 @@ const VercelFeedback = () => {
           <div className="vercel-feedback-icons">
             <button
               data-selected-mood={
-                selectedMood ? (selectedMood === 0 ? "true" : "false") : "false"
-              }
-              onClick={() => {
-                setState("active");
-                setSelectedMood(0);
-              }}
-              className="vercel-feedback-icon-button"
-            >
-              <Smile
-                className="vercel-feedback-icon"
-                size={16}
-                color="#49de80"
-                strokeWidth={2}
-              />
-            </button>
-            <button
-              data-selected-mood={
-                selectedMood ? (selectedMood === 1 ? "true" : "false") : "false"
+                selectedMood ? (selectedMood == 1 ? "true" : "false") : "false"
               }
               onClick={() => {
                 setState("active");
@@ -107,10 +87,10 @@ const VercelFeedback = () => {
               }}
               className="vercel-feedback-icon-button"
             >
-              <Meh
+              <Smile
                 className="vercel-feedback-icon"
                 size={16}
-                color="#49de80"
+                color="white"
                 strokeWidth={2}
               />
             </button>
@@ -124,10 +104,27 @@ const VercelFeedback = () => {
               }}
               className="vercel-feedback-icon-button"
             >
+              <Meh
+                className="vercel-feedback-icon"
+                size={16}
+                color="white"
+                strokeWidth={2}
+              />
+            </button>
+            <button
+              data-selected-mood={
+                selectedMood ? (selectedMood === 3 ? "true" : "false") : "false"
+              }
+              onClick={() => {
+                setState("active");
+                setSelectedMood(3);
+              }}
+              className="vercel-feedback-icon-button"
+            >
               <Frown
                 className="vercel-feedback-icon"
                 size={16}
-                color="#49de80"
+                color="white"
                 strokeWidth={2}
               />
             </button>
@@ -149,7 +146,7 @@ const VercelFeedback = () => {
                 style={{ marginBottom: "20px" }}
               />
               <p>Your feedback has been recieved.</p>
-              <p>Thanks for helping</p>
+              <p>Thanks for helping!</p>
             </motion.div>
           </div>
         ) : (

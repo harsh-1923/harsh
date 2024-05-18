@@ -14,7 +14,6 @@ const ExperimentCard = ({ title = "Processing Buttons", tag, src, link }) => {
             autoPlay
             loop
             muted
-            showControls="false"
             controlsList="nofullscreen"
             disablePictureInPicture
             playsInline
