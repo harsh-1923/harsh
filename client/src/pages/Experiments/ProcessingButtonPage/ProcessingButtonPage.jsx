@@ -10,6 +10,8 @@ const ProcessingButtonPage = () => {
 
       <div className="processing-button-demo-wrap">
         <ProcessingButton />
+
+        <div className="demo-prompt">Tap on the button to proccess.</div>
       </div>
     </div>
   );

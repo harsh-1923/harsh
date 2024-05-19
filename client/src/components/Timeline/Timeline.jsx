@@ -131,7 +131,7 @@ const Timeline = () => {
             <SlangLabsItem />
           </TimelineItem>
 
-          <TimelineItem startDate="07/23" endDate="05/24" color="#7CD3FFEF">
+          <TimelineItem startDate="07/23" endDate="06/24" color="#7CD3FFEF">
             <AirbusItem />
           </TimelineItem>
         </div>
@@ -233,7 +233,7 @@ const AirbusItem = () => {
           <p>• Bug fixes, feature stabilization, etc </p>
           <p>• Documentation and test cases</p>
         </Phase>
-        <Phase startDate="1/24" endDate="05/24" color="#7CD3FFEF">
+        <Phase startDate="1/24" endDate="06/24" color="#7CD3FFEF">
           <p>• Major feature development</p>
           <p>
             • Variants Development, enabling reuse of models across different

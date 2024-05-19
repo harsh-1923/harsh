@@ -1,9 +1,9 @@
 import React from "react";
 
-const SectionHeader = ({ title }) => {
+const SectionHeader = ({ title, reveal = false }) => {
   return (
     <h2
-      className="reveal-animation"
+      className={`${reveal ? "reveal-animation" : ""}`}
       style={{
         color: "inherit",
         fontSize: "22px",

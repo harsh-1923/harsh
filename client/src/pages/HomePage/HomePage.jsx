@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection/HeroSection";
 import Timeline from "../../components/Timeline/Timeline";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import ExperimentSlider from "../../components/ExperimentSlider/ExperimentSlider";
+import GetInTouch from "../../components/GetInTouch/GetInTouch";
 
 const HomePage = () => {
   React.useEffect(() => {
@@ -26,12 +27,12 @@ const HomePage = () => {
   return (
     <div className="homepage-wrap">
       <HeroSection />
-      <SectionHeader title="Experience" />
+      <SectionHeader reveal={true} title="Experience" />
       <Timeline />
       <SectionHeader title="Experiments" />
       <ExperimentSlider />
-
-      <div className="filler" />
+      <SectionHeader title="Get in touch" />
+      <GetInTouch />
     </div>
   );
 };

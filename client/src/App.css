@@ -21,3 +21,10 @@
   padding: var(--gap-md);
   min-height: 60px;
 }
+
+.demo-prompt {
+  color: var(--gray-10);
+  font-size: 12px;
+  border-bottom: 1px dashed var(--gray-5);
+  user-select: none;
+}
