@@ -5,8 +5,10 @@ import { Smile, Check, Loader, Frown, Meh } from "lucide-react";
 import useMeasure from "react-use-measure";
 
 import { motion, AnimatePresence } from "framer-motion";
+import useClickOutside from "../../../hooks/useClickOutside";
 
 const VercelFeedback = () => {
+  const wrappperRef = useRef(null);
   const [state, setState] = useState("inactive");
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -16,6 +18,15 @@ const VercelFeedback = () => {
 
   const [ref, bounds] = useMeasure();
   const textAreaRef = useRef();
+
+  useClickOutside(wrappperRef, () => {
+    console.log("Clicked out");
+    setState("inactive");
+    setFeedback("");
+    setIsSending(false);
+    setSent(false);
+    setSelectedMood(null);
+  });
 
   useEffect(() => {
     if (state === "active" && textAreaRef.current) {
@@ -66,6 +77,7 @@ const VercelFeedback = () => {
 
   return (
     <motion.div
+      ref={wrappperRef}
       variants={feedbackVars}
       initial={"inactive"}
       animate={state === "active" ? "active" : "inactive"}
