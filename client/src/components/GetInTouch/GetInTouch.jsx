@@ -10,7 +10,7 @@ const getInTouch = [
 
 const GetInTouch = () => {
   return (
-    <div className="contact-wrap">
+    <div className="contact-wrap" id="contact">
       {getInTouch.map((item, idx) => (
         <a className="contact-link" target="_blank" href={item.link}>
           {item.title}

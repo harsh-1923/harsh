@@ -39,6 +39,7 @@
 
   --outline: 1px solid var(--gray-3);
   --outline-dashed: 1px dashed var(--gray-5);
+  --text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.16);
 
   /* BG AND COLOR */
 
@@ -47,7 +48,7 @@
 
   /* FONT */
 
-  font-family: "Figtree", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;

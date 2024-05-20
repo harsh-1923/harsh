@@ -76,7 +76,7 @@ const ProcessingButton = () => {
     >
       <div ref={ref} className="processing-button-inner">
         <span>{iconStates[active]}</span>
-        <AnimatePresence initial="false" mode="popLayout">
+        <AnimatePresence initial={false} mode="popLayout">
           <motion.span
             transition={{ type: "spring", duration: 0.3, bounce: 0 }}
             key="analysing"

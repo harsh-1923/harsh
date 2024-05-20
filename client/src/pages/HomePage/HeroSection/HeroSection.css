@@ -16,7 +16,6 @@
   justify-content: center;
   flex-direction: column;
   animation: movebg var(--bg-duration) ease-in-out infinite alternate;
-  z-index: -100;
 }
 
 @media (width < 600px) {

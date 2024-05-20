@@ -34,7 +34,7 @@
   background-color: transparent;
   height: 44px;
   border-radius: 50px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .tab-item:hover {

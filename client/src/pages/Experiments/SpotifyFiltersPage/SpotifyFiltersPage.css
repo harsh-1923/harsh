@@ -9,6 +9,7 @@
   border-radius: var(--gap-xs);
   outline: var(--outline);
 
+  margin-bottom: var(--gap-xxl);
   display: flex;
   align-items: center;
   justify-content: center;

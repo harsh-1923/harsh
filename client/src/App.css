@@ -28,3 +28,13 @@
   border-bottom: 1px dashed var(--gray-5);
   user-select: none;
 }
+
+.page-content {
+  margin: var(--gap-xxl) 0;
+}
+
+.page-content > p {
+  font-size: 16px;
+  margin-bottom: var(--gap-md);
+  color: var(--gray-11);
+}

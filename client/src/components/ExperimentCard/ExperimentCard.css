@@ -8,7 +8,24 @@
   scroll-snap-align: start;
   position: relative;
   overflow: hidden;
-  /* padding: var(--gap-md) 0; */
+}
+
+.exp-card-link-icon-wrap {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-12);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (width > 600px) {

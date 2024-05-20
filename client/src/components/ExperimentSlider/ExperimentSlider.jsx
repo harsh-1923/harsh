@@ -33,18 +33,17 @@ const experiments = [
     tag: "System status dashboard widget",
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/System_Status.mp4",
   },
-
-  {
-    title: "Interactive Links",
-    link: "/exp/interactive-links",
-    tag: "Interactive links from Cuberto Design",
-    src: "https://imharsh.s3.eu-north-1.amazonaws.com/Interactive_Links.mp4",
-  },
   {
     title: "Tab Switcher",
     link: "/exp/tab-switcher",
     tag: "Dynamic tab indicators",
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/Tab_Switcher.mp4",
+  },
+  {
+    title: "Interactive Links",
+    link: "/exp/interactive-links",
+    tag: "Interactive links from Cuberto Design",
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/Interactive_Links.mp4",
   },
 ];
 

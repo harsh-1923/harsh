@@ -5,6 +5,10 @@ import BG_HERO from "../../../assets/BG_HERO.jpg";
 import { MoveRight } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <div
       style={{ backgroundImage: `url(${BG_HERO})` }}
@@ -24,7 +28,10 @@ const HeroSection = () => {
           technologies.
         </p>
 
-        <button className="hero-section-cta reveal-animation">
+        <button
+          className="hero-section-cta reveal-animation"
+          onClick={() => scrollToContact()}
+        >
           Get in touch
         </button>
       </div>

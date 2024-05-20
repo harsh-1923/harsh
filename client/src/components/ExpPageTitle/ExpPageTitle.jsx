@@ -7,6 +7,7 @@ import { Link, Check } from "lucide-react";
 const ExpPageTitle = ({ title, date }) => {
   const [isCopying, setIsCopying] = React.useState(false);
   const copy = () => {
+    if (isCopying) return;
     const currentUrl = window.location.href;
     navigator.clipboard.writeText(currentUrl);
     setIsCopying(true);
@@ -15,7 +16,10 @@ const ExpPageTitle = ({ title, date }) => {
     }, 3000);
   };
   return (
-    <div className="exp-page-title-wrap">
+    <div
+      aria-label={`Experiment title: ${title}`}
+      className="exp-page-title-wrap"
+    >
       <div className="exp-page-title">
         <p>{title}</p>
         <small>{date}</small>
