@@ -10,6 +10,8 @@ import SystemStatusPage from "./pages/Experiments/SystemStatusPage/SystemStatusP
 import AppleNotesMenuPage from "./pages/Experiments/AppleNotesMenuPage/AppleNotesMenuPage";
 import TabSwitcherPage from "./pages/Experiments/TabSwitcherPage/TabSwitcherPage";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import { Toaster, toast } from "sonner";
 import SliderButtonPage from "./pages/Experiments/SliderButtonPage/SliderButtonPage";
 
@@ -40,6 +42,7 @@ function App() {
           <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
+      <Analytics />
     </main>
   );
 }

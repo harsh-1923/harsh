@@ -113,7 +113,7 @@ const SliderButton = () => {
             layoutId="success"
             className="slider-success-wrap"
           >
-            Payment Recieved
+            Payment Received
           </motion.div>
         )}
       </AnimatePresence>
