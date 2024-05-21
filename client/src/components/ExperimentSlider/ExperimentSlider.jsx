@@ -4,6 +4,12 @@ import ExperimentCard from "../ExperimentCard/ExperimentCard";
 
 const experiments = [
   {
+    title: "Slider Button",
+    link: "/exp/slider-button",
+    tag: "State specific button states.",
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/ProcessingButton.mp4",
+  },
+  {
     title: "Dynamic Button",
     link: "/exp/dynamic-button",
     tag: "State specific button states.",

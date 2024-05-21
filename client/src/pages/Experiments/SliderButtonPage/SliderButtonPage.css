@@ -1,0 +1,17 @@
+.sb-page-wrap {
+  width: 100%;
+}
+
+.sb-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+
+  background-color: var(--gray-1);
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  margin-bottom: var(--gap-xxl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

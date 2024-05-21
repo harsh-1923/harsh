@@ -66,7 +66,7 @@ const VercelFeedback = () => {
     setSelectedMood(null);
     setSent(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     setData({ mood: selectedMood, feedback: feedback });
     // toast(`<p>Sent to "/api/v1/feedback<p> <br/> ${JSON.stringify(data)}`);
     setState("inactive");

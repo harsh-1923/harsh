@@ -11,6 +11,7 @@ import AppleNotesMenuPage from "./pages/Experiments/AppleNotesMenuPage/AppleNote
 import TabSwitcherPage from "./pages/Experiments/TabSwitcherPage/TabSwitcherPage";
 
 import { Toaster, toast } from "sonner";
+import SliderButtonPage from "./pages/Experiments/SliderButtonPage/SliderButtonPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -21,6 +22,7 @@ const routes = [
   { path: "/exp/system-status", element: <SystemStatusPage /> },
   { path: "/exp/apple-notes-menu", element: <AppleNotesMenuPage /> },
   { path: "/exp/tab-switcher", element: <TabSwitcherPage /> },
+  { path: "/exp/slider-button", element: <SliderButtonPage /> },
 ];
 
 function App() {

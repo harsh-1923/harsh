@@ -18,7 +18,13 @@ const ProcessingButton = () => {
 
   const iconStates = {
     idle: null,
-    active: <LoaderCircle className="loader" size={18} strokeWidth={2} />,
+    active: (
+      <LoaderCircle
+        className="sliding-button-loader"
+        size={18}
+        strokeWidth={2}
+      />
+    ),
     completed: <CircleCheck className="processing-button-check" size={18} />,
     fail: <CircleAlert className="processing-button-alert" size={18} />,
   };
