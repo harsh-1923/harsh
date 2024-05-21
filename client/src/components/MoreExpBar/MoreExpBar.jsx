@@ -13,10 +13,10 @@ const MoreExpBar = ({
   return (
     <div className="more-exp-bar-wrap">
       <Link to={leftLink} className="more-exp-bar-left">
-        <ArrowLeft size={16} /> <small>{leftTitle}</small>
+        <ArrowLeft size={16} /> <p>{leftTitle}</p>
       </Link>
       <Link to={rightLink} className="more-exp-bar-right">
-        <small>{rightTitle}</small>
+        <p>{rightTitle}</p>
         <ArrowRight size={16} />
       </Link>
     </div>
