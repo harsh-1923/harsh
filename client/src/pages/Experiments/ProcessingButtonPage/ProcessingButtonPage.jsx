@@ -45,8 +45,8 @@ const ProcessingButtonPage = () => {
       </div>
 
       <MoreExpBar
-        leftTitle="Apple Notes Menu"
-        leftLink="/exp/apple-notes-menu"
+        leftTitle="Slider Button"
+        leftLink="/exp/slider-button"
         rightTitle="Vercel Feedback"
         rightLink="/exp/vercel-feedback"
       />

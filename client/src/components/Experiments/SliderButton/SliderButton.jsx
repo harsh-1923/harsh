@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "./SliderButton.css";
-import Skeleton from "@mui/material/Skeleton";
 
 import {
   AnimatePresence,
