@@ -43,11 +43,6 @@
   justify-content: center;
 }
 
-.metrics {
-  position: absolute;
-  top: -100px;
-}
-
 .slider-button-checkmark {
   display: flex;
   align-items: center;
@@ -99,7 +94,6 @@
 
 .sliding-button-loader {
   animation: sliding-button-loading 500ms linear infinite;
-  /* outline: 1px solid red; */
 }
 
 @keyframes sliding-button-loading {

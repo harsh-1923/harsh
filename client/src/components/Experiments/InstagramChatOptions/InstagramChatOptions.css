@@ -1,0 +1,55 @@
+.ig-chat-options-wrap {
+  width: 95%;
+  max-width: 350px;
+  height: 700px;
+
+  outline: 12px solid black;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  overflow-y: scroll;
+}
+
+@media (width < 600px) {
+  .ig-chat-options-wrap {
+    outline: none;
+  }
+}
+
+.igc-messages {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  inset: 0;
+  padding-top: 40px;
+
+  padding: 16px;
+}
+
+.igc-messages > ul > li {
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 2px;
+  /* background-color: blue; */
+}
+
+.igc-messages > ul > li > div {
+  max-width: 80%;
+  border-radius: 8px;
+  /* background-color: red; */
+}
+
+li.igc-message[data-sender="receiver"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+li.igc-message[data-sender="sender"] + li.igc-message[data-sender="receiver"],
+li.igc-message[data-sender="receiver"] + li.igc-message[data-sender="sender"] {
+  margin-top: 10px;
+}

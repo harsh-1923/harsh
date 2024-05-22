@@ -157,7 +157,7 @@ const VercelFeedback = () => {
                 color={"#0070f3"}
                 style={{ marginBottom: "20px" }}
               />
-              <p>Your feedback has been recieved.</p>
+              <p>Your feedback has been received.</p>
               <p>Thanks for helping!</p>
             </motion.div>
           </div>

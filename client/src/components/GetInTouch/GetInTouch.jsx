@@ -12,7 +12,12 @@ const GetInTouch = () => {
   return (
     <div className="contact-wrap" id="contact">
       {getInTouch.map((item, idx) => (
-        <a className="contact-link" target="_blank" href={item.link}>
+        <a
+          key={item.title}
+          className="contact-link"
+          target="_blank"
+          href={item.link}
+        >
           {item.title}
         </a>
       ))}

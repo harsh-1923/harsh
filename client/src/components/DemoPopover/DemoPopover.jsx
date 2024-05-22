@@ -13,7 +13,9 @@ const DemoPopover = ({
 }) => {
   const [isActive, setIsActive] = React.useState(false);
   const y = useMotionValue(0);
-  const opacity = useTransform(y, [0, 450], [1, 0]);
+  const opacity = useTransform(y, [0, 250], [1, 0]);
+  const velocityThreshold = 500;
+  const offsetThreshold = 100;
   const videoElement = React.useMemo(
     () => (
       <video
@@ -30,12 +32,17 @@ const DemoPopover = ({
     [src]
   );
 
-  const handleDragEnd = (event, info) => {
-    if (info.offset.y > 150) {
+  const handleDragEnd = async (event, info) => {
+    if (
+      info.offset.y > offsetThreshold ||
+      info.velocity.y > velocityThreshold
+    ) {
       setIsActive(false);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      y.set(0);
+    } else {
+      y.set(0);
     }
-
-    y.set(0);
   };
   return (
     <div>
@@ -61,7 +68,7 @@ const DemoPopover = ({
               backdropFilter: "blur(0px)",
               WebkitBackdropFilter: "blur(0px)",
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4 }}
             className="demo-popover-wrap"
           >
             <motion.div
@@ -74,7 +81,8 @@ const DemoPopover = ({
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 500, opacity: 0 }}
               drag="y"
-              dragConstraints={{ top: 0, bottom: 0 }}
+              dragConstraints={{ top: 0, bottom: 100 }}
+              dragElastic={0.1}
               onDrag={(_, info) => y.set(info.offset.y)}
               onDragEnd={handleDragEnd}
               className="demo-popover-content-wrap"

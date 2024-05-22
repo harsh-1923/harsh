@@ -1,0 +1,15 @@
+.ig-chat-options-page-wrap {
+  width: 100%;
+}
+
+.ig-chat-demo-wrap {
+  width: 100%;
+  min-height: 800px;
+  background-color: var(--gray-1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+}
