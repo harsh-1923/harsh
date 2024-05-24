@@ -1,0 +1,225 @@
+.ms-wrap {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.ms-inner-wrap {
+  width: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  position: relative;
+}
+
+/* -------HEADER-------  */
+
+.ms-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-xl);
+}
+
+.ms-header > p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ms-header > div > button {
+  padding: 6px 12px;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: black;
+  background-image: linear-gradient(180deg, white, rgb(204, 204, 204));
+  width: 66px;
+  text-shadow: var(--text-shadow);
+}
+
+/* ----------IMAGE---------  */
+.ms-images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ms-image {
+  width: 130px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  border-radius: var(--gap-xs);
+  overflow: hidden;
+  position: relative;
+}
+
+.ms-image > img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.ms-image-selection-indicator {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  outline: 1px solid white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ms-image-indicator-shadow {
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+}
+
+.ms-image-selection-indicator > span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  border-radius: 50%;
+}
+
+.ms-option-tray {
+  position: absolute;
+  margin-top: var(--gap-md);
+  bottom: 50px;
+  border-bottom: 1px dashed var(--gray-7);
+}
+
+.ms-option-tray > button {
+  background-color: var(--gray-1);
+  color: var(--gray-12);
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ------------SELECTED WRAP------------  */
+.ms-selected-images-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.multi-select-underlay {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+}
+
+.ms-selected-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  /* width: 160px;
+  height: 160px; */
+}
+
+.ms-selected-image {
+  width: 160px;
+  height: 160px;
+
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  top: 50px;
+
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+}
+
+.ms-selected-image > img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+.ms-selected-image:nth-of-type(2) {
+  rotate: 8deg;
+}
+.ms-selected-image:nth-of-type(3) {
+  rotate: -8deg;
+}
+
+/* ----------SELECTED_MENU-----------  */
+
+.ms-menu {
+  position: absolute;
+  background-color: #212121;
+  width: 220px;
+  /* height: 200px; */
+  top: 260px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  border-radius: var(--gap-md);
+  overflow: hidden;
+
+  background: rgba(39, 39, 39, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  cursor: not-allowed;
+}
+
+.ms-menu-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-xs) var(--gap-md);
+  cursor: disabled;
+}
+
+.ms-menu-divider {
+  width: 100%;
+  height: var(--gap-md);
+  background-color: #212121;
+}
+
+.ms-menu-option > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ms-menu-option + .ms-menu-option {
+  border-top: 1px solid #464648;
+}
+
+.ms-menu-divider + .ms-menu-option {
+  border: none;
+}

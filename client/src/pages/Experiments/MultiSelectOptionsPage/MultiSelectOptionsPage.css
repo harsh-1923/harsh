@@ -1,0 +1,18 @@
+.multi-select-page-wrap {
+  width: 100%;
+}
+
+.multi-select-demo-wrap {
+  width: 100%;
+  /* min-height: 600px; */
+  padding: var(--gap-xs) 0;
+  background-color: var(--gray-1);
+  outline: var(--outline);
+
+  border-radius: var(--gap-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: var(--gap-xxl);
+}

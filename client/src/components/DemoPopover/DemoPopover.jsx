@@ -7,6 +7,8 @@ import {
   useTransform,
 } from "framer-motion";
 
+import { X } from "lucide-react";
+
 const DemoPopover = ({
   src = "https://imharsh.s3.eu-north-1.amazonaws.com/Vercel_Feedback.mp4",
   title = "Vercel Feedback",
@@ -87,7 +89,18 @@ const DemoPopover = ({
               onDragEnd={handleDragEnd}
               className="demo-popover-content-wrap"
             >
-              <motion.h3 style={{ opacity }}>{title}</motion.h3>
+              <div className="demo-popover-slider"></div>
+
+              <div className="demo-popover-header-wrap">
+                <motion.h3 style={{ opacity }}>{title}</motion.h3>
+                <button
+                  onClick={() => setIsActive(false)}
+                  className="demo-slider-cross"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+
               <motion.div style={{ opacity }} className="demo-popover-video">
                 {videoElement}
               </motion.div>

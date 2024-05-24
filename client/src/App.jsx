@@ -14,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import { Toaster, toast } from "sonner";
 import SliderButtonPage from "./pages/Experiments/SliderButtonPage/SliderButtonPage";
+import MultiSelectOptionsPage from "./pages/Experiments/MultiSelectOptionsPage/MultiSelectOptionsPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -25,6 +26,7 @@ const routes = [
   { path: "/exp/apple-notes-menu", element: <AppleNotesMenuPage /> },
   { path: "/exp/tab-switcher", element: <TabSwitcherPage /> },
   { path: "/exp/slider-button", element: <SliderButtonPage /> },
+  { path: "/exp/multi-select", element: <MultiSelectOptionsPage /> },
 ];
 
 function App() {
