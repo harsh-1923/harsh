@@ -60,8 +60,8 @@ const SliderButtonPage = () => {
         </p>
       </div>
       <MoreExpBar
-        leftTitle="Spotify Filters"
-        leftLink="/exp/spotify-filters"
+        leftTitle="Multi Select Menu"
+        leftLink="/exp/multi-select"
         rightTitle="Dynamic Button"
         rightLink="/exp/dynamic-button"
       />

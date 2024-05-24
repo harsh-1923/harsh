@@ -90,8 +90,7 @@
   height: 8px;
   border-radius: 40px;
   margin: 0 auto;
-  /* background-color: var(--gray-5); */
-  background-color: whitesmoke;
+  background-color: var(--gray-5);
   cursor: grabbing;
 }
 

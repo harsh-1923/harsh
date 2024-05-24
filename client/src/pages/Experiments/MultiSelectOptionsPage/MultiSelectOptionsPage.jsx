@@ -4,6 +4,7 @@ import "./MultiSelectOptionsPage.css";
 import ExpPageTitle from "../../../components/ExpPageTitle/ExpPageTitle.jsx";
 import MultiSelectOptions from "../../../components/Experiments/MultiSelectOptions/MultiSelectOptions";
 import DemoPopover from "../../../components/DemoPopover/DemoPopover.jsx";
+import MoreExpBar from "../../../components/MoreExpBar/MoreExpBar.jsx";
 const MultiSelectOptionsPage = () => {
   return (
     <div className="multi-select-page-wrap">
@@ -17,6 +18,13 @@ const MultiSelectOptionsPage = () => {
           />
         </div>
       </div>
+
+      <MoreExpBar
+        leftTitle="Vercel Feedback"
+        leftLink="/exp/vercel-feedback"
+        rightTitle="Slider Button"
+        rightLink="/exp/slider-button"
+      />
     </div>
   );
 };

@@ -89,16 +89,20 @@ const DemoPopover = ({
               onDragEnd={handleDragEnd}
               className="demo-popover-content-wrap"
             >
-              <div className="demo-popover-slider"></div>
+              <motion.div
+                style={{ opacity }}
+                className="demo-popover-slider"
+              ></motion.div>
 
               <div className="demo-popover-header-wrap">
                 <motion.h3 style={{ opacity }}>{title}</motion.h3>
-                <button
+                <motion.button
+                  style={{ opacity }}
                   onClick={() => setIsActive(false)}
                   className="demo-slider-cross"
                 >
                   <X size={16} />
-                </button>
+                </motion.button>
               </div>
 
               <motion.div style={{ opacity }} className="demo-popover-video">
