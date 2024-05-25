@@ -27,7 +27,7 @@ const variants = [
     status: "Normal",
   },
   {
-    report: "Elevated edge fucntion errors",
+    report: "Elevated edge function errors",
     status: "Warning",
   },
   {
