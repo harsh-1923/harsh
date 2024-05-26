@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./ExperimentSlider.css";
 import ExperimentCard from "../ExperimentCard/ExperimentCard";
 
@@ -60,6 +60,28 @@ const experiments = [
 ];
 
 const ExperimentSlider = () => {
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const sliderElement = sliderRef.current;
+
+    if (sliderElement) {
+      // Check if the element exists
+      const handleWheel = (event) => {
+        event.preventDefault(); // Prevents the window from scrolling vertically
+        sliderElement.scrollLeft += event.deltaY * 0.5; // Adjust multiplier as needed for speed
+      };
+
+      sliderElement.addEventListener("wheel", handleWheel);
+
+      return () => {
+        if (sliderElement) {
+          // Ensure the element is still there when cleaning up
+          sliderElement.removeEventListener("wheel", handleWheel);
+        }
+      };
+    }
+  }, []); // Empty dependency array ensures this runs once on mount
   return (
     <div className="exp-slider-wrap">
       <div className="exp-slider-inner">
