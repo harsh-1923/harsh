@@ -1,0 +1,164 @@
+.igo-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.igo-chats {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 0.5;
+  max-height: 700px;
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+}
+
+.igo-text {
+  width: 100%;
+  list-style-type: none;
+  margin-top: 2px;
+}
+
+.igo-sender-text > span,
+.igo-receiver-text > span {
+  user-select: none;
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 80%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  /* width: fit-content; */
+}
+
+.igo-receiver-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.igo-sender-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.igo-sender-text > span {
+  background-color: var(--gray-3);
+}
+
+.igo-receiver-text > span {
+  /* background-image: linear-gradient(180deg, #6e6ade, #5472e4); */
+  background-color: #3b9eff;
+}
+
+.igo-sender-text + .igo-receiver-text,
+.igo-receiver-text + .igo-sender-text {
+  margin-top: var(--gap-xs);
+}
+
+/* --------UNDERLAY------------ */
+.igo-underlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.ig-selected-chat {
+  position: fixed;
+  z-index: 100;
+  list-style-type: none;
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+}
+
+.ig-selected-text {
+  user-select: none;
+
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 80%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.ig-emojis-wrap {
+  height: 60px;
+  background-color: var(--gray-4);
+  z-index: 1000;
+  position: fixed;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gap-md);
+  cursor: not-allowed;
+}
+
+.ig-emojis-wrap > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ig-chat-options-wrap-outer {
+  position: fixed;
+  z-index: 100;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.ig-chat-options-wrap {
+  z-index: 100;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  border-radius: var(--gap-md);
+  overflow: hidden;
+
+  background: rgba(39, 39, 39, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  cursor: not-allowed;
+}
+
+.ig-selected-chat-dropdown-option {
+  width: 100%;
+  z-index: inherit;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-xs) var(--gap-md);
+  cursor: disabled;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.128);
+}
+
+.ig-selected-chat-dropdown-option:nth-child(1),
+.ig-selected-chat-dropdown-option:nth-child(3) {
+  border: none !important;
+}
+
+.ig-menu-divider {
+  width: 100%;
+  height: var(--gap-xs);
+  background-color: #212121;
+}

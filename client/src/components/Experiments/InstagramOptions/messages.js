@@ -1,4 +1,4 @@
-const messages = [
+const MESSAGES = [
   {
     from: "receiver",
     text: "Sure, I'll check and update you shortly.",
@@ -109,4 +109,4 @@ const messages = [
   },
 ];
 
-export default messages;
+export default MESSAGES;
