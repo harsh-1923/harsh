@@ -15,6 +15,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Toaster, toast } from "sonner";
 import SliderButtonPage from "./pages/Experiments/SliderButtonPage/SliderButtonPage";
 import MultiSelectOptionsPage from "./pages/Experiments/MultiSelectOptionsPage/MultiSelectOptionsPage";
+import InstagramOptionsPage from "./pages/Experiments/InstagramOptionsPage/InstagramOptionsPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -27,6 +28,7 @@ const routes = [
   { path: "/exp/tab-switcher", element: <TabSwitcherPage /> },
   { path: "/exp/slider-button", element: <SliderButtonPage /> },
   { path: "/exp/multi-select", element: <MultiSelectOptionsPage /> },
+  { path: "/exp/ig-chat-options", element: <InstagramOptionsPage /> },
 ];
 
 function App() {
