@@ -117,8 +117,8 @@ const InstagramOptions = forwardRef((props, ref) => {
               style={{
                 backgroundColor:
                   MESSAGES[activeIndex].from === "receiver"
-                    ? "#3b9eff"
-                    : "var(--gray-3)",
+                    ? "var(--chat-bg)"
+                    : "var(--gray-5)",
               }}
             >
               {MESSAGES[activeIndex].text}
@@ -132,7 +132,7 @@ const InstagramOptions = forwardRef((props, ref) => {
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.7, opacity: 0 }}
-            transition={{ bounce: 0, type: "spring", duration: 0.3 }}
+            transition={{ bounce: 0, type: "spring", duration: 0.2 }}
             className="ig-emojis-wrap"
             style={{
               left: pos.left,
@@ -185,6 +185,7 @@ const InstagramOptions = forwardRef((props, ref) => {
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.7, opacity: 0 }}
+              transition={{ bounce: 0, type: "spring", duration: 0.2 }}
               style={{
                 transformOrigin: `${
                   MESSAGES[activeIndex].from === "receiver"

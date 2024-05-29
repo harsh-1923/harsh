@@ -20,8 +20,8 @@ const MultiSelectOptionsPage = () => {
       </div>
 
       <MoreExpBar
-        leftTitle="Vercel Feedback"
-        leftLink="/exp/vercel-feedback"
+        leftTitle="Instagram Chat Options"
+        leftLink="/exp/ig-chat-options"
         rightTitle="Slider Button"
         rightLink="/exp/slider-button"
       />

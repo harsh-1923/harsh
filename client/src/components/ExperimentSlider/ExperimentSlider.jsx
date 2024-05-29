@@ -5,9 +5,9 @@ import ExperimentCard from "../ExperimentCard/ExperimentCard";
 const experiments = [
   {
     title: "Multi Select Menu",
-    link: "/exp/multi-select",
+    link: "/exp/ig-chat-options",
     tag: "Slide to confirm button.",
-    src: "https://imharsh.s3.eu-north-1.amazonaws.com/Multi_Select.mp4",
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/IG_CHAT_OPTIONS.mp4",
   },
   {
     title: "Slider Button",
