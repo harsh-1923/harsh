@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, forwardRef } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 import "./InstagramOptions.css";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,10 +9,7 @@ import { Plus, Reply, Send, Copy, MessageSquareWarning } from "lucide-react";
 const InstagramOptions = forwardRef((props, ref) => {
   const chatContainerRef = useRef(null);
   const [showOptions, setShowOptions] = useState(false);
-  const [position, setPosition] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
-  const [left, setLeft] = useState(0);
-  const [width, setWidht] = useState(0);
 
   const [pos, setPos] = useState({
     left: 0,
@@ -44,15 +41,10 @@ const InstagramOptions = forwardRef((props, ref) => {
       width: textRect.width,
       height: textRect.height,
     });
-    setPosition(top);
-    setWidht(textRect.width);
-    setLeft(textRect.left);
     setShowOptions(true);
 
-    console.log(textRect);
-
     if (navigator.vibrate) {
-      navigator.vibrate(200); // vibrate for 200 milliseconds
+      navigator.vibrate(200);
     } else {
       console.log("Vibration API not supported");
     }
