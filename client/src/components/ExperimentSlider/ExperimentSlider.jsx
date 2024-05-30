@@ -72,17 +72,15 @@ const ExperimentSlider = () => {
     const sliderElement = sliderRef.current;
 
     if (sliderElement) {
-      // Check if the element exists
       const handleWheel = (event) => {
-        event.preventDefault(); // Prevents the window from scrolling vertically
-        sliderElement.scrollLeft += event.deltaY * 0.5; // Adjust multiplier as needed for speed
+        event.preventDefault();
+        sliderElement.scrollLeft += event.deltaY * 0.5;
       };
 
       sliderElement.addEventListener("wheel", handleWheel);
 
       return () => {
         if (sliderElement) {
-          // Ensure the element is still there when cleaning up
           sliderElement.removeEventListener("wheel", handleWheel);
         }
       };

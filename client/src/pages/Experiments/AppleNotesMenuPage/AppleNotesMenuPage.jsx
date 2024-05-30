@@ -6,6 +6,12 @@ import DemoPopover from "../../../components/DemoPopover/DemoPopover.jsx";
 import MoreExpBar from "../../../components/MoreExpBar/MoreExpBar.jsx";
 
 const AppleNotesMenuPage = () => {
+  React.useEffect(() => {
+    document.title = "Apple Notes Menu";
+    return () => {
+      document.title = "Harsh Sharma";
+    };
+  }, []);
   return (
     <div className="apn-page-wrap">
       <ExpPageTitle title="Apple Notes Menu" date="April, 2024" />

@@ -76,7 +76,6 @@
   position: fixed;
   z-index: 100;
   list-style-type: none;
-  /* width: 100%; */
   display: flex;
   align-items: center;
 }
