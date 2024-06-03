@@ -16,6 +16,8 @@ import { Toaster, toast } from "sonner";
 import SliderButtonPage from "./pages/Experiments/SliderButtonPage/SliderButtonPage";
 import MultiSelectOptionsPage from "./pages/Experiments/MultiSelectOptionsPage/MultiSelectOptionsPage";
 import InstagramOptionsPage from "./pages/Experiments/InstagramOptionsPage/InstagramOptionsPage";
+import CalendarAppPage from "./pages/Experiments/CalendarAppPage/CalendarAppPage";
+import Playground from "./pages/Playground/Playground";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -29,6 +31,8 @@ const routes = [
   { path: "/exp/slider-button", element: <SliderButtonPage /> },
   { path: "/exp/multi-select", element: <MultiSelectOptionsPage /> },
   { path: "/exp/ig-chat-options", element: <InstagramOptionsPage /> },
+  { path: "/exp/calendar-event", element: <CalendarAppPage /> },
+  { path: "/exp/playground", element: <Playground /> },
 ];
 
 function App() {

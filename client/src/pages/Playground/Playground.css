@@ -1,0 +1,17 @@
+.playground-wrap {
+  width: 100%;
+}
+
+.playground-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--gray-1);
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gap-xl);
+  margin-bottom: calc(3 * var(--gap-xl));
+}

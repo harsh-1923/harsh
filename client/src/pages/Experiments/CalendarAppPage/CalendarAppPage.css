@@ -1,0 +1,17 @@
+.ca-page-wrap {
+  width: 100%;
+}
+
+.ca-demo-wrap {
+  width: 100%;
+
+  background-color: var(--gray-1);
+  outline: var(--outline);
+  border-radius: var(--gap-xs);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 200px;
+}
