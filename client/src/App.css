@@ -63,3 +63,7 @@
 .inline-links:focus {
   border-bottom: 1px dashed lightblue;
 }
+
+a:focus {
+  outline: 1px solid lightblue;
+}

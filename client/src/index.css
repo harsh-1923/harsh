@@ -65,10 +65,7 @@
   /* REMOVE SCROLL BOUNCE  */
 
   overscroll-behavior: none !important;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  scrollbar-color: var(--gray-6) transparent;
 }
 
 ::selection {

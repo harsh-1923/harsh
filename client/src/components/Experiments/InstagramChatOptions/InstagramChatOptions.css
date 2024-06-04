@@ -19,8 +19,6 @@
 
 .igc-messages {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   flex-direction: column;
   gap: 10px;
   position: absolute;
@@ -34,13 +32,11 @@
   text-decoration: none;
   list-style-type: none;
   margin-top: 2px;
-  /* background-color: blue; */
 }
 
 .igc-messages > ul > li > div {
   max-width: 80%;
   border-radius: 8px;
-  /* background-color: red; */
 }
 
 li.igc-message[data-sender="receiver"] {

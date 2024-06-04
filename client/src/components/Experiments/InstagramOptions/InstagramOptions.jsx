@@ -10,6 +10,7 @@ const InstagramOptions = forwardRef((props, ref) => {
   const chatContainerRef = useRef(null);
   const [showOptions, setShowOptions] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [revealDelay, setRevealDelay] = useState(false);
 
   const [pos, setPos] = useState({
     left: 0,
@@ -32,6 +33,11 @@ const InstagramOptions = forwardRef((props, ref) => {
     const contentRect = ref.current.getBoundingClientRect();
     let top = Math.max(contentRect.top + 65, textRect.top);
     top = Math.min(top, contentRect.bottom - 280);
+
+    if (Math.abs(top - textRect.top) > 100) {
+      console.log("first");
+      setRevealDelay(0.3);
+    }
 
     setPos({
       top,
@@ -75,7 +81,7 @@ const InstagramOptions = forwardRef((props, ref) => {
             onClick={() => {
               setShowOptions(false);
               setActiveIndex(null);
-              setPosition({
+              setPos({
                 left: 0,
                 right: 0,
                 top: 0,
@@ -124,7 +130,12 @@ const InstagramOptions = forwardRef((props, ref) => {
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.7, opacity: 0 }}
-            transition={{ bounce: 0, type: "spring", duration: 0.2 }}
+            transition={{
+              bounce: 0,
+              type: "spring",
+              duration: 0.2,
+              delay: revealDelay ? 0.1 : 0,
+            }}
             className="ig-emojis-wrap"
             style={{
               left: pos.left,
@@ -153,7 +164,7 @@ const InstagramOptions = forwardRef((props, ref) => {
             onClick={() => {
               setShowOptions(false);
               setActiveIndex(null);
-              setPosition({
+              setPos({
                 left: 0,
                 right: 0,
                 top: 0,
@@ -177,7 +188,12 @@ const InstagramOptions = forwardRef((props, ref) => {
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.7, opacity: 0 }}
-              transition={{ bounce: 0, type: "spring", duration: 0.2 }}
+              transition={{
+                bounce: 0,
+                type: "spring",
+                duration: 0.2,
+                delay: revealDelay ? 0.1 : 0,
+              }}
               style={{
                 transformOrigin: `${
                   MESSAGES[activeIndex].from === "receiver"

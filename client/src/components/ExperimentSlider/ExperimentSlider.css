@@ -1,16 +1,47 @@
 .exp-slider-wrap {
   max-width: var(--page-max-width);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-slider-header-wrap {
   display: flex;
   align-items: center;
-  overflow: scroll;
-  margin-right: 10px;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 20px;
-  padding-bottom: 20px;
+  justify-content: space-between;
+}
+
+.exp-slider-button-tray {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+}
+
+.exp-slider-button {
+  border-radius: 50%;
+
+  outline: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
 }
 
 .exp-slider-inner {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+  gap: var(--gap-xs);
+  scroll-behavior: smooth;
+}
+
+.exp-card-slider {
+  overflow: scroll;
+  padding-bottom: var(--gap-xl);
+  scroll-behavior: smooth;
 }

@@ -3,7 +3,6 @@
   width: 290px;
   height: 400px;
   background-color: var(--gray-1);
-  margin-right: var(--gap-xs);
   border-radius: var(--gap-xs);
   scroll-snap-align: start;
   position: relative;
@@ -26,6 +25,10 @@
   color: var(--gray-12);
   background-color: transparent;
   cursor: pointer;
+}
+
+.exp-card-link-icon-wrap:focus {
+  outline: 1px solid lightblue;
 }
 
 @media (width > 600px) {

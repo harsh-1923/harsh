@@ -29,7 +29,7 @@ const HomePage = () => {
       <HeroSection />
       <SectionHeader reveal={true} title="Experience" />
       <Timeline />
-      <SectionHeader title="Experiments" />
+      {/* <SectionHeader title="Experiments" /> */}
       <ExperimentSlider />
       <SectionHeader title="Get in touch" />
       <GetInTouch />
