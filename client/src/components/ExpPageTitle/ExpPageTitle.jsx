@@ -16,15 +16,16 @@ const ExpPageTitle = ({ title, date }) => {
     }, 3000);
   };
   return (
-    <div
-      aria-label={`Experiment title: ${title}`}
-      className="exp-page-title-wrap"
-    >
+    <div className="exp-page-title-wrap">
       <div className="exp-page-title">
         <p>{title}</p>
         <small>{date}</small>
       </div>
-      <button className="exp-page-link-button" onClick={copy}>
+      <button
+        aria-label="Copy Link to Page"
+        className="exp-page-link-button"
+        onClick={copy}
+      >
         <AnimatePresence initial={false} mode="wait">
           {isCopying ? (
             <motion.span

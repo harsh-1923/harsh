@@ -110,7 +110,11 @@
   cursor: pointer;
 }
 
-.hero-section-cta:focus {
+.hero-section-cta:hover {
+  scale: 1.11;
+}
+
+.hero-section-cta:focus-visible {
   outline: 1px solid lightblue;
   outline-offset: 3px;
 }

@@ -5,7 +5,6 @@ import ExpPageTitle from "../../../components/ExpPageTitle/ExpPageTitle.jsx";
 import SliderButton from "../../../components/Experiments/SliderButton/SliderButton.jsx";
 import DemoPopover from "../../../components/DemoPopover/DemoPopover.jsx";
 import MoreExpBar from "../../../components/MoreExpBar/MoreExpBar.jsx";
-import { Link } from "react-router-dom";
 
 const SliderButtonPage = () => {
   return (

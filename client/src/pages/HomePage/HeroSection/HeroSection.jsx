@@ -29,6 +29,7 @@ const HeroSection = () => {
         </p>
 
         <button
+          aria-description="Get in touch"
           className="hero-section-cta reveal-animation"
           onClick={() => scrollToContact()}
         >

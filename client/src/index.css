@@ -31,6 +31,9 @@
 
   --accent-blue: #1994ff;
 
+  --error: #e70347;
+  --apple-sys-blue: #217cd1;
+
   /* GAPS  */
 
   --gap-xs: 8px;
@@ -80,6 +83,14 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid lightblue;
 }
 
 input,

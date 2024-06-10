@@ -60,10 +60,10 @@
   padding-bottom: 2px;
 }
 
-.inline-links:focus {
+.inline-links:focus-visible {
   border-bottom: 1px dashed lightblue;
 }
 
-a:focus {
+a:focus-visible {
   outline: 1px solid lightblue;
 }

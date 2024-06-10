@@ -12,6 +12,13 @@ const InstagramOptions = forwardRef((props, ref) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [revealDelay, setRevealDelay] = useState(false);
 
+  React.useEffect(() => {
+    document.title = "Instagram Chat Options";
+    return () => {
+      document.title = "Harsh Sharma";
+    };
+  }, []);
+
   const [pos, setPos] = useState({
     left: 0,
     right: 0,

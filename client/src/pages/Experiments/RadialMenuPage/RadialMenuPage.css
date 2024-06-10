@@ -1,0 +1,26 @@
+.radial-menu-wrap {
+  width: 100%;
+}
+
+.radial-menu-demo-wrap {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--gray-1);
+
+  border-radius: var(--gap-xs);
+  outline: var(--outline);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 60px;
+  margin-bottom: var(--gap-xl);
+  position: relative;
+}
+
+.radial-menu-hint {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--gray-11);
+}

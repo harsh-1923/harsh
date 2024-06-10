@@ -18,6 +18,7 @@ import MultiSelectOptionsPage from "./pages/Experiments/MultiSelectOptionsPage/M
 import InstagramOptionsPage from "./pages/Experiments/InstagramOptionsPage/InstagramOptionsPage";
 import CalendarAppPage from "./pages/Experiments/CalendarAppPage/CalendarAppPage";
 import Playground from "./pages/Playground/Playground";
+import RadialMenuPage from "./pages/Experiments/RadialMenuPage/RadialMenuPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -33,6 +34,7 @@ const routes = [
   { path: "/exp/ig-chat-options", element: <InstagramOptionsPage /> },
   { path: "/exp/calendar-event", element: <CalendarAppPage /> },
   { path: "/exp/playground", element: <Playground /> },
+  { path: "/exp/radial-menu", element: <RadialMenuPage /> },
 ];
 
 function App() {

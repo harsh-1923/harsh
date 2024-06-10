@@ -1,0 +1,71 @@
+.rm-wrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  --rm-trigger-linear-bg: linear-gradient(
+    135deg,
+    rgb(240, 231, 231),
+    rgb(205, 205, 205)
+  );
+
+  --rm-trigger-linear-bg-open: linear-gradient(
+    180deg,
+    rgb(240, 231, 231),
+    rgb(182, 181, 181)
+  );
+  --rm-trigger-linear-bg-closed: linear-gradient(
+    135deg,
+    rgb(17, 16, 16),
+    black
+  );
+}
+
+.rm-button {
+  outline: none;
+  border: none;
+  color: var(--gray-12);
+
+  color: rgb(44, 40, 40);
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--text-shadow);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.rm-trigger {
+  position: absolute;
+  z-index: 10;
+  will-change: background-image, background-color;
+  box-shadow: var(--text-shadow);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rm-trigger:focus-visible {
+  outline: 1px solid var(--gray-10);
+  outline-offset: 5px;
+}
+
+.rm-options {
+  position: absolute;
+  z-index: 0;
+  width: 58px !important;
+  background-image: linear-gradient(135deg, #bff6c3, #97c89a);
+}
+
+.rm-options:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 5px;
+}
+
+.rm-options > span {
+  position: absolute;
+  transform: translate(0, 45px);
+}

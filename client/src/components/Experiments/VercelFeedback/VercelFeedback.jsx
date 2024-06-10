@@ -20,7 +20,6 @@ const VercelFeedback = () => {
   const textAreaRef = useRef();
 
   useClickOutside(wrappperRef, () => {
-    // console.log("Clicked out");
     setState("inactive");
     setFeedback("");
     setIsSending(false);

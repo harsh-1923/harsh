@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Calendar.css";
 
-import { X } from "lucide-react";
+import { Video, X } from "lucide-react";
 
 import EVENTS from "./events.js";
 
 import { motion, useTransform, useMotionValue } from "framer-motion";
+import AvatarTray from "../../AvatarTray/AvatarTray.jsx";
 
 const Calendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -23,7 +24,7 @@ const Calendar = () => {
         <motion.div
           drag={true}
           dragConstraints={calendarRef}
-          dragElastic={0.3}
+          dragElastic={0.5}
           onDrag={(event, info) => {
             y.set(Math.max(Math.abs(info.offset.x), Math.abs(info.offset.y)));
           }}
@@ -38,11 +39,30 @@ const Calendar = () => {
           }}
           style={{
             scale,
-            backgroundColor: selectedEvent === 1 ? "#e54d2e" : "#e54666",
+            backgroundImage:
+              selectedEvent === 1 ? "var(--ca-ev-1)" : "var(--ca-ev-2)",
           }}
           layoutId={`event-${selectedEvent}-wrap`}
           className="ca-event-selected-wrap"
+          transition={{ duration: 0.4, type: "spring", bounce: 0.35 }}
         >
+          <motion.div layout className="ca-selected-action-tray">
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="ca-selected-action-tray-cancel-btn"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="ca-selected-action-tray-mute-btn"
+            >
+              Mute
+            </button>
+          </motion.div>
+          {/* <motion.p layout layoutId={`event-{selectedEvent}-title`}>
+            {EVENTS[selectedEvent - 1].title}
+          </motion.p> */}
           <motion.div layout className="ca-selected-header">
             <motion.p layout layoutId={`event-{selectedEvent}-title`}>
               {EVENTS[selectedEvent - 1].title}
@@ -51,14 +71,27 @@ const Calendar = () => {
               {EVENTS[selectedEvent - 1].duration}
             </motion.p>
           </motion.div>
-          <br />
-          <motion.div
+          <motion.div layout className="ca-selected-event-details-wrap">
+            <motion.div className="ca-selected-event-detail">
+              <Video /> <p>{EVENTS[selectedEvent - 1].link}</p>
+            </motion.div>
+            <motion.div className="ca-selected-event-detail">
+              <Video /> <p>{EVENTS[selectedEvent - 1].link}</p>
+            </motion.div>
+            <motion.div className="ca-selected-event-detail">
+              <Video /> <p>{EVENTS[selectedEvent - 1].link}</p>
+            </motion.div>
+            <motion.div className="ca-selected-event-detail">
+              <Video /> <p>{EVENTS[selectedEvent - 1].link}</p>
+            </motion.div>
+          </motion.div>
+          <motion.div className="ca-selected-avatars">
+            <AvatarTray count="2" />
+          </motion.div>
+          {/* <motion.div
             style={{ contentOpacity }}
             layout
             classname="ca-selected-event-details-wrap"
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // duration={{ duration: 2 }}
           >
             <h3 style={{ fontWeight: 7000 }}>Event Details</h3>
             <p
@@ -94,7 +127,7 @@ const Calendar = () => {
                 30 mins before
               </p>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       )}
       <div className="ca-event-timeline">
