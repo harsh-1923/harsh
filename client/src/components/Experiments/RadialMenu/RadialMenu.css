@@ -2,9 +2,9 @@
   position: relative;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
-
   --rm-trigger-linear-bg: linear-gradient(
     135deg,
     rgb(240, 231, 231),
@@ -23,6 +23,76 @@
   );
 }
 
+.rm-trigger {
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+
+  position: absolute;
+  z-index: 10;
+  will-change: background-image, background-color;
+  box-shadow: var(--text-shadow);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rm-trigger > span,
+.rm-options > span {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rm-options {
+  position: absolute;
+  z-index: 0;
+  width: 50px !important;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #1994ff 0%, #157cff 100%);
+  color: white;
+}
+
+.rm-options:hover {
+  background-image: linear-gradient(180deg, #188cf2 0%, #1271ee 100%);
+}
+
+.rm-button-label {
+  position: absolute;
+  bottom: -37px;
+  font-size: 12px;
+}
+
+.rm-trigger:focus-visible {
+  outline: 2px solid var(--gray-10);
+  outline-offset: 3px;
+}
+
+.rm-options:focus-visible {
+  outline: 1px solid rgba(48, 181, 230, 0.785);
+  outline-offset: 1px;
+}
+
+/* 
+
 .rm-button {
   outline: none;
   border: none;
@@ -40,7 +110,6 @@
 }
 
 .rm-trigger {
-  /* color: rgb(44, 40, 40); */
   position: absolute;
   z-index: 10;
   will-change: background-image, background-color;
@@ -57,7 +126,6 @@
   position: absolute;
   z-index: 0;
   width: 58px !important;
-  /* background-image: linear-gradient(135deg, #bff6c3, #97c89a); */
   background-image: linear-gradient(180deg, #1994ff 0%, #157cff 100%);
 }
 
@@ -66,7 +134,10 @@
   outline-offset: 5px;
 }
 
-.rm-options > span {
+.rm-button-label {
   position: absolute;
-  transform: translate(0, 45px);
-}
+  bottom: -20px;
+  left: 0;
+  transform: translate(-50%, 0);
+  background-color: red;
+} */
