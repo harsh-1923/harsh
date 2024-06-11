@@ -2,34 +2,25 @@ import React, { useState, useRef } from "react";
 import "./RadialMenu.css";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Plus, Wallet, ShoppingCart, User, Scale } from "lucide-react";
 import useClickOutside from "../../../hooks/useClickOutside";
 import { toast } from "sonner";
+import {
+  calculateAngle,
+  triggerVariant,
+  MENU_OPTIONS,
+  calculateDistance,
+} from "./radialMenuUtils.jsx";
 
-const MENU_OPTIONS = [
-  { icon: <Wallet size={24} className="rm-icon" />, label: "Wallet" },
-  { icon: <ShoppingCart size={24} className="rm-icon" />, label: "Cart" },
-  { icon: <User size={24} className="rm-icon" />, label: "Account" },
-];
+import { Plus } from "lucide-react";
 
 const TOTAL_BUTTONS = MENU_OPTIONS.length;
-const triggerVariant = {
-  open: {
-    transform: "rotate(-45deg)",
-    color: "white",
-    backgroundColor: "black",
-  },
-  closed: {
-    transform: "rotate(0deg)",
-    color: "black",
-    backgroundColor: "black",
-  },
-};
 
 const RadialMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [activeOption, setActiveOption] = useState(-1);
   const RADIAL_DISTANCE = 120;
   const rmRef = useRef(null);
+  const triggerRef = useRef(null);
 
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
@@ -37,13 +28,88 @@ const RadialMenu = () => {
     }
   };
 
+  React.useEffect(() => {
+    document.title = "Radial Menu";
+    return () => {
+      document.title = "Harsh Sharma";
+    };
+  }, []);
+
   useClickOutside(rmRef, () => {
     setShowMenu(false);
   });
 
+  // React.useEffect(() => {
+  //   console.log(activeOption);
+  // }, [activeOption]);
+
+  const handleMouseDown = (event) => {
+    if (showMenu) {
+      setShowMenu(false);
+      setActiveOption(-1);
+      return;
+    }
+
+    setShowMenu(true);
+    if (!triggerRef.current) return;
+
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const pivotRect = { x: triggerRect.right, y: triggerRect.bottom };
+
+    const handleMouseMove = (e) => {
+      const deltaX = e.clientX - pivotRect.x;
+      const deltaY = e.clientY - pivotRect.y;
+
+      if (deltaX > 0 || deltaY > 0) return;
+      //not the second quadrant
+
+      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+      if (distance < 70) {
+        setActiveOption(-1);
+        return;
+      }
+
+      const angle =
+        calculateAngle(
+          { x: e.clientX, y: e.clientY },
+          { x: pivotRect.x, y: pivotRect.y },
+          { x: 0, y: pivotRect.x }
+        ) - 80;
+
+      if (angle < 25) {
+        setActiveOption(3);
+        navigator.vibrate(200);
+      } else if (angle < 55) {
+        setActiveOption(2);
+        navigator.vibrate(200);
+      } else {
+        setActiveOption(1);
+        navigator.vibrate(200);
+      }
+    };
+
+    const handleMouseUp = () => {
+      console.log(activeOption);
+      // if (activeOption !== -1) {
+      //   toast(`Clicked on v`);
+      // }
+
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
   return (
     <div ref={rmRef} onKeyDown={handleKeyDown} className="rm-wrap">
-      <button onClick={() => setShowMenu(!showMenu)} className="rm-trigger">
+      <button
+        ref={triggerRef}
+        onMouseDown={handleMouseDown}
+        className="rm-trigger"
+      >
         <motion.span
           variants={triggerVariant}
           initial="closed"
@@ -66,7 +132,11 @@ const RadialMenu = () => {
               <motion.button
                 aria-label={option.label}
                 type="button"
+                data-state-active={
+                  activeOption === idx + 1 ? "active" : "inactive"
+                }
                 onClick={() => {
+                  navigator.vibrate(50);
                   toast(`Clicked on ${option.label}`);
                   setShowMenu(false);
                 }}

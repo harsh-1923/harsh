@@ -2,9 +2,10 @@
   position: relative;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
+
+  --rm-button-size: 60px;
   --rm-trigger-linear-bg: linear-gradient(
     135deg,
     rgb(240, 231, 231),
@@ -30,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: var(--rm-button-size);
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
@@ -41,6 +42,7 @@
   will-change: background-image, background-color;
   box-shadow: var(--text-shadow);
   -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
 
 .rm-trigger > span,
@@ -63,16 +65,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: var(--rm-button-size);
   aspect-ratio: 1;
   cursor: pointer;
   background-color: transparent;
   background-image: linear-gradient(180deg, #1994ff 0%, #157cff 100%);
   color: white;
+  transition: scale 150ms ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rm-options[data-state-active="active"] {
+  scale: 1.04;
 }
 
 .rm-options:hover {
-  background-image: linear-gradient(180deg, #188cf2 0%, #1271ee 100%);
+  background-image: linear-gradient(180deg, #1994ff 0%, rgb(7, 100, 223) 100%);
 }
 
 .rm-button-label {
