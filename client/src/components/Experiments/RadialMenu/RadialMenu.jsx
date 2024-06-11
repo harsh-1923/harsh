@@ -17,12 +17,12 @@ const TOTAL_BUTTONS = MENU_OPTIONS.length;
 const triggerVariant = {
   open: {
     transform: "rotate(-45deg)",
-    color: "black",
+    color: "white",
     backgroundColor: "white",
   },
   closed: {
     transform: "rotate(0deg)",
-    color: "white",
+    color: "black",
     backgroundColor: "black",
   },
 };
@@ -163,14 +163,13 @@ const RadialMenu = () => {
         initial="closed"
         animate={showMenu ? "open" : "closed"}
         exit="open"
-        // onClick={() => setShowMenu(!showMenu)}
         className="rm-button rm-trigger"
         aria-expanded={showMenu}
         aria-label="Main Menu"
         onMouseDown={handleMouseDown}
         style={{
-          backgroundImage: showMenu
-            ? "var(--rm-trigger-linear-bg-open)"
+          backgroundImage: !showMenu
+            ? "var(--gradient-pastle-green)"
             : "var(--rm-trigger-linear-bg-closed)",
         }}
       >

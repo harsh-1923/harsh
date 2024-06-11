@@ -49,6 +49,8 @@
   --outline-dashed: 1px dashed var(--gray-5);
   --text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.16);
 
+  --gradient-pastle-green: linear-gradient(135deg, #bff6c3, #97c89a);
+
   /* BG AND COLOR */
 
   background-color: var(--bg);
