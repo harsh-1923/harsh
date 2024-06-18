@@ -13,9 +13,9 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
   -webkit-tap-highlight-color: rgb(202, 221, 241);
 }
 

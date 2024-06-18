@@ -1,0 +1,33 @@
+.word-modal-page {
+  width: 100%;
+}
+
+.word-modal-demo {
+  width: 100%;
+  background-color: var(--gray-1);
+
+  border-radius: var(--gap-xs);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  margin-bottom: var(--gap-xxl);
+  outline: var(--outline);
+}
+
+.word-modal-demo > p {
+  line-height: 1.6;
+  font-size: 16px;
+  will-change: filter;
+  transition: filter 0.3s ease-in;
+}
+
+/* .dictionary-wrap {
+  width: 100%;
+  height: 100%;
+} */
+
+/* .dictionary-usage {
+  white-space: pre-wrap;
+} */

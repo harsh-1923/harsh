@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -43,7 +44,7 @@
   --page-max-width: 900px;
   --page-mobile-padding: var(--gap-md);
 
-  /* BORDERS AND OUTLINES  */
+  /* BORDERS AND OUTLINES */
 
   --outline: 1px solid var(--gray-3);
   --outline-dashed: 1px dashed var(--gray-5);

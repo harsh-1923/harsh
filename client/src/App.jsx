@@ -19,6 +19,8 @@ import InstagramOptionsPage from "./pages/Experiments/InstagramOptionsPage/Insta
 import CalendarAppPage from "./pages/Experiments/CalendarAppPage/CalendarAppPage";
 import Playground from "./pages/Playground/Playground";
 import RadialMenuPage from "./pages/Experiments/RadialMenuPage/RadialMenuPage";
+import ScrollToTop from "./components/ScrollToTop";
+import WordModalPage from "./pages/Experiments/WordModalPage/WordModalPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -35,23 +37,25 @@ const routes = [
   { path: "/exp/calendar-event", element: <CalendarAppPage /> },
   { path: "/exp/playground", element: <Playground /> },
   { path: "/exp/radial-menu", element: <RadialMenuPage /> },
+  { path: "/exp/word-modal", element: <WordModalPage /> },
 ];
 
 function App() {
   return (
     <main className="app">
       <Header />
+      <ScrollToTop />
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
       <Toaster
         richColors
         toastOptions={{
           className: "toast",
         }}
       />
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
       <Analytics />
     </main>
   );

@@ -1,0 +1,38 @@
+.wm-wrap {
+  display: inline-block;
+  flex: wrap;
+  white-space: nowrap;
+  position: relative;
+}
+
+.wm-word-btn {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  color: yellow;
+  font: inherit;
+  font-size: inherit;
+  display: inline-block;
+  filter: blur(0px) !important;
+}
+
+.wm-modal {
+  display: inline-block;
+  position: absolute;
+  background-color: var(--gray-3);
+  outline: 1px solid var(--gray-7);
+  z-index: 999999999;
+  padding: var(--gap-xs);
+  border-radius: var(--gap-xs);
+  animation: scale 0.2s cubic-bezier(0.13, 0.83, 0.55, 1.14);
+  -webkit-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 1px 39px 16px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes scale {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+}
