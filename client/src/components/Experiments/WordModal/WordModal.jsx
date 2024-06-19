@@ -46,7 +46,7 @@ const WordModal = ({ boundingRef, word, children }) => {
       ? boundingRef.current.getBoundingClientRect().height
       : window.innerHeight;
 
-    let GRIDS = window.innerWidth > 600 ? 3 : window.innerWidth > 400 ? 3 : 2;
+    let GRIDS = window.innerWidth > 600 ? 3 : window.innerWidth > 450 ? 3 : 2;
 
     let SPACE_WIDTH_PADDING = SPACE_WIDTH / GRIDS;
     let SPACE_HEIGHT_PADDING = Math.max(SPACE_HEIGHT / GRIDS, 200);
@@ -65,7 +65,7 @@ const WordModal = ({ boundingRef, word, children }) => {
       : window.innerHeight;
 
     let isFlipped = false;
-    if (Math.abs(buttonRect.bottom - def) < 200) {
+    if (Math.abs(buttonRect.bottom - def) < 220) {
       isFlipped = true;
       verticalPos = { bottom: buttonRect.height };
     }
@@ -78,11 +78,10 @@ const WordModal = ({ boundingRef, word, children }) => {
       : 0;
 
     if (buttonRect.left < SPACE_WIDTH_PADDING) {
+      console.log("Left");
       if (buttonRect.left + MODAL_WIDTH > RIGHT_LIMIT) {
         console.log("adjusting from left");
-        let delta_adj = buttonRect.left + MODAL_WIDTH - RIGHT_LIMIT;
-
-        console.log(delta_adj);
+        let delta_adj = buttonRect.left + MODAL_WIDTH - RIGHT_LIMIT + 16;
 
         setModalPos({
           left: -1 * delta_adj,
@@ -102,7 +101,7 @@ const WordModal = ({ boundingRef, word, children }) => {
       console.log("Right");
       if (buttonRect.right - MODAL_WIDTH < LEFT_LIMIT) {
         console.log("Adjusting");
-        let delta_adj = LEFT_LIMIT - buttonRect.right + MODAL_WIDTH;
+        let delta_adj = LEFT_LIMIT - buttonRect.right + MODAL_WIDTH + 16;
 
         setModalPos({
           right: -1 * delta_adj,
@@ -113,7 +112,6 @@ const WordModal = ({ boundingRef, word, children }) => {
         return;
       }
 
-      //   console.log({ buttonRect, LEFT_LIMIT, MODAL_WIDTH });
       setModalPos({
         right: 0,
         transformOrigin: isFlipped ? "bottom right" : "top right",
@@ -122,7 +120,6 @@ const WordModal = ({ boundingRef, word, children }) => {
     } else {
       console.log("Middle");
       setModalPos({
-        // left: "50%",
         transform: "translateX(-50%)",
         transformOrigin: isFlipped ? "bottom left" : "top left",
         ...verticalPos,
