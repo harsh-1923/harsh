@@ -9,7 +9,7 @@ const WordModalPage = () => {
   const demoRef = React.useRef(null);
   return (
     <div className="word-modal-page">
-      <ExpPageTitle title="Word Modal" date="June 2024" />
+      <ExpPageTitle title="Word Popup" date="June 2024" />
       <div ref={demoRef} className="word-modal-demo">
         <div>
           In the tranquil embrace of solitude, amidst the verdant{" "}

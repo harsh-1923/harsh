@@ -12,7 +12,6 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  margin-bottom: var(--gap-xxl);
   outline: var(--outline);
 }
 
