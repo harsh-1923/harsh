@@ -65,6 +65,10 @@
   padding-left: var(--gap-md);
 }
 
+.tldr-content > ul > li {
+  padding-bottom: var(--gap-md);
+}
+
 .tldr-content > p > a,
 .tldr-content > ul > li > a {
   color: #70b8ff;

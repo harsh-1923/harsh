@@ -18,7 +18,7 @@ const TLDR = () => {
           Most of the projects that I have worked on are owned by the respective
           enterprise and hence I do not have a large full-stack project to share
           with you at the moment. However, here are a few things that I have
-          been working on lately. I hope this can give you an insigt on my
+          been working on lately. I hope this can give you an insight on my
           approach to coding and solving problems in general.
         </p>
         <p className="tldr-subheader">Currently</p>
@@ -188,6 +188,11 @@ const TLDR = () => {
           <li>
             Follow up on key engagement metrics to improve performance and
             streamline inventory supply based on demand
+          </li>
+          <li>
+            Allow PMs to create automated workflows using intuitive UI to couple
+            backend services - reducing the need for developer involvment for
+            quick changes and feature experiments
           </li>
         </ul>
         <p>
