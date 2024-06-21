@@ -23,6 +23,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import WordModalPage from "./pages/Experiments/WordModalPage/WordModalPage";
 import ProgressiveBlurPage from "./pages/Experiments/ProgressiveBlurPage/ProgressiveBlurPage";
 import SliderGalleryPage from "./pages/Experiments/SliderGalleryPage/SliderGalleryPage";
+import TLDR from "./pages/TLDR/TLDR";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -42,6 +43,7 @@ const routes = [
   { path: "/exp/word-modal", element: <WordModalPage /> },
   { path: "/exp/progressive-blur", element: <ProgressiveBlurPage /> },
   { path: "/exp/gallery", element: <SliderGalleryPage /> },
+  { path: "/tldr", element: <TLDR /> },
 ];
 
 function App() {

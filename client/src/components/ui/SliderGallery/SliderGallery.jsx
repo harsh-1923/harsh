@@ -56,7 +56,7 @@ const SliderGallery = () => {
 
   const handleClose = async () => {
     setSelectedItem(null);
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 900));
     y.set(0);
     // document.body.style.overflow = "auto";
     // disabled due to jarring effects
@@ -156,7 +156,6 @@ const SliderGallery = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{
-                duration: 0.4,
                 type: "spring",
                 bounce: 0.3,
                 duration: 0.5,

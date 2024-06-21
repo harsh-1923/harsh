@@ -60,7 +60,7 @@ const SliderButton = () => {
     setSuccess(true);
 
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    reset();
+    // reset();
   };
 
   const handleDragEnd = (_, info) => {
