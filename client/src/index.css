@@ -74,6 +74,26 @@
   scrollbar-color: var(--gray-6) transparent;
 }
 
+* {
+  scrollbar-color: var(--gray-6) transparent;
+}
+
+/* For Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px; /* or any size you want */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* or any color you prefer */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gray-6); /* your preferred color for the thumb */
+  border-radius: 8px; /* optional: to make the scrollbar thumb rounded */
+  border: 4px solid transparent; /* makes a difference in the thumb by using padding */
+  background-clip: content-box; /* this ensures that the border area does not show the background color */
+}
+
 ::selection {
   background-color: rgb(171, 202, 255);
   color: black;

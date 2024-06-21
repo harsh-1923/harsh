@@ -1,0 +1,75 @@
+const LIST = [
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1498.jpeg",
+    caption: "Indian Grand Prix",
+    desc: "4 times World Champion - Sebastian Vettle",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1500.jpeg",
+    caption: "Belgian Grand Prix",
+    desc: "Nothing more exciting than the Eau Rouge-Raidillon",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1501.jpeg",
+    caption: "There's a new Champion",
+    desc: "3 times WDC - Max Verstappen",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1502.jpeg",
+    caption: "Austrian Grand Prix",
+    desc: "Red Bull Racing Ring",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1504.jpeg",
+    caption: "Indian Grand Prix",
+    caption: "Lando Norris",
+    desc: "Lando has arrived..",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1507.jpeg",
+    caption: "Monaco Grand Prix",
+    desc: "Save your right rears..",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1509.jpeg",
+    caption: "Sebastian Vettle",
+    desc: "4 times World Champion - Sebastian Vettle",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1511.jpeg",
+    caption: "Candaian Grand Prix 2024",
+    desc: "Double DNF for Ferrari!",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1512.jpeg",
+    caption: "Vettle in Senna's McLaren",
+    desc: "2024 - Emilia-Romagna, Imola, Italy.",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+  {
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1513.jpeg",
+    caption: "The Great & G.O.A.T",
+    desc: "Vettle in Senna's McLaren, 2024",
+    credits: "F1 Pictures That Go Hard",
+    link: "https://x.com/hardF1pics",
+  },
+];
+
+export default LIST;

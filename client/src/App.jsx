@@ -21,6 +21,8 @@ import Playground from "./pages/Playground/Playground";
 import RadialMenuPage from "./pages/Experiments/RadialMenuPage/RadialMenuPage";
 import ScrollToTop from "./components/ScrollToTop";
 import WordModalPage from "./pages/Experiments/WordModalPage/WordModalPage";
+import ProgressiveBlurPage from "./pages/Experiments/ProgressiveBlurPage/ProgressiveBlurPage";
+import SliderGalleryPage from "./pages/Experiments/SliderGalleryPage/SliderGalleryPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -38,6 +40,8 @@ const routes = [
   { path: "/exp/playground", element: <Playground /> },
   { path: "/exp/radial-menu", element: <RadialMenuPage /> },
   { path: "/exp/word-modal", element: <WordModalPage /> },
+  { path: "/exp/progressive-blur", element: <ProgressiveBlurPage /> },
+  { path: "/exp/gallery", element: <SliderGalleryPage /> },
 ];
 
 function App() {

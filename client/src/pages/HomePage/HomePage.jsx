@@ -6,6 +6,7 @@ import Timeline from "../../components/Timeline/Timeline";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import ExperimentSlider from "../../components/ExperimentSlider/ExperimentSlider";
 import GetInTouch from "../../components/GetInTouch/GetInTouch";
+import SliderGallery from "../../components/ui/SliderGallery/SliderGallery";
 
 const HomePage = () => {
   React.useEffect(() => {
@@ -31,6 +32,7 @@ const HomePage = () => {
       <Timeline />
       {/* <SectionHeader title="Experiments" /> */}
       <ExperimentSlider />
+
       <SectionHeader title="Get in touch" />
       <GetInTouch />
     </div>
