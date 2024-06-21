@@ -58,7 +58,8 @@ const SliderGallery = () => {
     setSelectedItem(null);
     await new Promise((resolve) => setTimeout(resolve, 500));
     y.set(0);
-    document.body.style.overflow = "auto";
+    // document.body.style.overflow = "auto";
+    // disabled due to jarring effects
   };
 
   return (
@@ -70,7 +71,7 @@ const SliderGallery = () => {
             layoutId={`sg-thumbnail-${idx}`}
             onClick={() => {
               setSelectedItem(idx);
-              document.body.style.overflow = "hidden";
+              // document.body.style.overflow = "hidden";
             }}
             style={{ backgroundImage: `url(${item.src})` }}
             role="listitem"
