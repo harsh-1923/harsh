@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 
 import LIST from "./galleryItems";
+import { X } from "lucide-react";
 
 const SliderGallery = () => {
   const [selectedItem, setSelectedItem] = React.useState(null);
@@ -143,6 +144,15 @@ const SliderGallery = () => {
               tabIndex={0}
               aria-label="Drag to dismiss"
             ></motion.div>
+
+            <motion.button
+              className="sg-dismiss-button"
+              initial={{ x: 30, y: -30, opacity: 0 }}
+              animate={{ x: 0, y: 0, opacity: 1 }}
+              exit={{ x: 30, y: -30, opacity: 0 }}
+            >
+              <X color="white" onClick={handleClose} />
+            </motion.button>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

@@ -1,5 +1,11 @@
 const EXPERIMENTS = [
   {
+    title: "Gallery",
+    link: "/exp/gallery",
+    tag: "Tap to expand images.",
+    src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1Gallery.mp4",
+  },
+  {
     title: "Instagram Chat Options",
     link: "/exp/ig-chat-options",
     tag: "Tap to reveal actions/options.",

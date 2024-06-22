@@ -22,6 +22,7 @@ const SpotifyFiltersPage = () => {
       <MoreExpBar
         leftTitle="Vercel Feedback"
         leftLink="/exp/vercel-feedback"
+        x
         rightTitle="Apple Notes Menu"
         rightLink="/exp/apple-notes-menu"
       />

@@ -19,7 +19,7 @@
 .demo-trigger {
   position: fixed;
   bottom: var(--gap-md);
-  z-index: 10000000;
+  z-index: 10000;
 }
 
 @media (max-width: 600px) {

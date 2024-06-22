@@ -2,9 +2,9 @@ const LIST = [
   {
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1498.jpeg",
     caption: "Indian Grand Prix",
-    desc: "4 times World Champion - Sebastian Vettle",
-    credits: "F1 Pictures That Go Hard",
-    link: "https://x.com/hardF1pics",
+    desc: "4 times World Champion - Sebastian Vettel",
+    credits: "F1 Wallpapers",
+    link: "https://x.com/F1Wallpapers4K",
   },
   {
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1500.jpeg",
@@ -45,7 +45,7 @@ const LIST = [
   {
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1509.jpeg",
     caption: "Sebastian Vettle",
-    desc: "4 times World Champion - Sebastian Vettle",
+    desc: "4 time World Champion - Sebastian Vettel",
     credits: "F1 Pictures That Go Hard",
     link: "https://x.com/hardF1pics",
   },
@@ -53,22 +53,22 @@ const LIST = [
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1511.jpeg",
     caption: "Candaian Grand Prix 2024",
     desc: "Double DNF for Ferrari!",
-    credits: "F1 Pictures That Go Hard",
-    link: "https://x.com/hardF1pics",
+    credits: "F1 Wallpapers",
+    link: "https://x.com/F1Wallpapers4K",
   },
   {
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1512.jpeg",
     caption: "Vettle in Senna's McLaren",
     desc: "2024 - Emilia-Romagna, Imola, Italy.",
-    credits: "F1 Pictures That Go Hard",
-    link: "https://x.com/hardF1pics",
+    credits: "F1 Wallpapers",
+    link: "https://x.com/F1Wallpapers4K",
   },
   {
     src: "https://imharsh.s3.eu-north-1.amazonaws.com/F1/IMG_1513.jpeg",
     caption: "The Great & G.O.A.T",
     desc: "Vettle in Senna's McLaren, 2024",
-    credits: "F1 Pictures That Go Hard",
-    link: "https://x.com/hardF1pics",
+    credits: "F1 Wallpapers",
+    link: "https://x.com/F1Wallpapers4K",
   },
 ];
 
