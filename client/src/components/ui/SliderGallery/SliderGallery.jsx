@@ -17,7 +17,9 @@ const SliderGallery = () => {
   const y = useMotionValue(0);
   const velocityThreshold = 300;
   const offsetThreshold = 120;
-  const opacity = useTransform(y, [0, offsetThreshold], [1, 0]);
+  const opacity = useTransform(y, [0, 1.5 * offsetThreshold], [1, 0]);
+
+  const IMAGE_TRANSITION_DURATION = 0.7;
 
   // Preload images on component mount
   useEffect(() => {
@@ -57,7 +59,7 @@ const SliderGallery = () => {
 
   const handleClose = async () => {
     setSelectedItem(null);
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    await new Promise((resolve) => setTimeout(resolve, 700));
     y.set(0);
     // document.body.style.overflow = "auto";
     // disabled due to jarring effects
@@ -98,7 +100,6 @@ const SliderGallery = () => {
               backdropFilter: "blur(0)",
               WebkitBackdropFilter: "blur(0px)",
             }}
-            onClick={() => setSelectedItem(null)}
             className="sg-underlay"
           ></motion.div>
         )}
@@ -116,7 +117,7 @@ const SliderGallery = () => {
               style={{ opacity }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, exit: { duration: 0 } }}
+              transition={{ duration: IMAGE_TRANSITION_DURATION }}
               src={LIST[selectedItem].src}
               className="sg-underlay-img"
               role="presentation"
@@ -132,27 +133,25 @@ const SliderGallery = () => {
               drag
               dragSnapToOrigin={true}
               onDrag={(_, info) => {
-                y.set(Math.max(info.offset.x, info.offset.y));
+                y.set(
+                  Math.max(Math.abs(info.offset.x), Math.abs(info.offset.y))
+                );
               }}
               layoutId={`sg-thumbnail-${selectedItem}`}
               className="sg-thumbnail-open"
               key={`sg-thumbnail-open-${selectedItem}`}
               onDragEnd={handleDragEnd}
               style={{ backgroundImage: `url(${LIST[selectedItem].src})` }}
-              transition={{ type: "spring", duration: 0.35, bounce: 0.3 }}
+              transition={{
+                type: "spring",
+                duration: IMAGE_TRANSITION_DURATION,
+                bounce: 0.3,
+              }}
               role="button"
               tabIndex={0}
               aria-label="Drag to dismiss"
             ></motion.div>
 
-            <motion.button
-              className="sg-dismiss-button"
-              initial={{ x: 30, y: -30, opacity: 0 }}
-              animate={{ x: 0, y: 0, opacity: 1 }}
-              exit={{ x: 30, y: -30, opacity: 0 }}
-            >
-              <X color="white" onClick={handleClose} />
-            </motion.button>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -169,9 +168,10 @@ const SliderGallery = () => {
                 type: "spring",
                 bounce: 0.3,
                 duration: 0.5,
-                exit: { duration: 1 },
+                exit: { duration: 0.1 },
               }}
               className="sg-thumbnail-details-wrap"
+              key={`sg-details-${LIST[selectedItem].desc}`}
             >
               <div>
                 <h2
