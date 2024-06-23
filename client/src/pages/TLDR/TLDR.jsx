@@ -43,7 +43,7 @@ const TLDR = () => {
         </p>
         <div className="tldr-demo-trigger-wrap">
           <DemoPopover
-            src="https://imharsh.s3.eu-north-1.amazonaws.com/GallerySlider.mp4"
+            src="https://imharsh.s3.eu-north-1.amazonaws.com/F1Gallery.mp4"
             title="Gallery"
           />
         </div>

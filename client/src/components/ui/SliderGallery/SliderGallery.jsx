@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 
 import LIST from "./galleryItems";
-import { X } from "lucide-react";
 
 const SliderGallery = () => {
   const [selectedItem, setSelectedItem] = React.useState(null);
