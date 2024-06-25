@@ -156,6 +156,9 @@
   text-shadow: var(--text-shadow);
   background-image: linear-gradient(to bottom, var(--gray-12), var(--gray-11));
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (height > 768px) {

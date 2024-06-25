@@ -1,0 +1,111 @@
+/* reset */
+button {
+  all: unset;
+}
+
+.SelectTrigger {
+  margin-top: 8px;
+  width: calc(100% - 8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  height: 40px;
+  gap: 5px;
+  background-color: var(--gray-1);
+  color: var(--gray-11);
+  /* background-color: var(--gray-12);
+  background-image: linear-gradient(to bottom, var(--gray-12), var(--gray-11)); */
+  box-shadow: 0 2px 10px var(--black-7);
+  outline: var(--outline);
+}
+.SelectTrigger:hover {
+  background-color: var(--mauve-3);
+}
+.SelectTrigger:focus {
+  outline: 1px solid var(--sm-accent);
+}
+.SelectTrigger[data-placeholder] {
+  padding-left: var(--gap-xs);
+}
+
+.SelectIcon {
+  color: Var(--violet-11);
+}
+
+.SelectContent {
+  overflow: hidden;
+  background-color: var(--gray-12);
+  color: var(--gray-1);
+  border-radius: 4px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.SelectViewport {
+  padding: 8px;
+  background-color: var(--gray-2);
+  color: var(--gray-12);
+  outline: var(--outline);
+}
+
+.SelectItem {
+  width: 310px;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+  height: 30px;
+  color: var(--gray-11);
+}
+.SelectItem[data-disabled] {
+  color: var(--gray-3);
+  pointer-events: none;
+}
+.SelectItem[data-highlighted] {
+  outline: none;
+  color: orange;
+}
+
+.SelectLabel {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: inherit;
+  color: var(--gray-12);
+}
+
+.SelectSeparator {
+  height: 1px;
+  background-color: var(--violet-6);
+  margin: 5px;
+}
+
+.SelectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SelectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: white;
+  color: var(--violet-11);
+  cursor: default;
+}
+
+.item-wrap {
+  height: 40px;
+}

@@ -1,0 +1,22 @@
+.smp-wrap {
+  width: 100%;
+}
+
+.sm-demo-wrap {
+  width: 100%;
+  height: 600px;
+
+  /* background-color: var(--gray-1); */
+  /* outline: var(--outline); */
+  border-radius: var(--gap-xs);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.sm_demo-container {
+  width: 400px;
+  height: 450px;
+}

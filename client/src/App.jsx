@@ -24,6 +24,7 @@ import WordModalPage from "./pages/Experiments/WordModalPage/WordModalPage";
 import ProgressiveBlurPage from "./pages/Experiments/ProgressiveBlurPage/ProgressiveBlurPage";
 import SliderGalleryPage from "./pages/Experiments/SliderGalleryPage/SliderGalleryPage";
 import TLDR from "./pages/TLDR/TLDR";
+import StackedModalPage from "./pages/Experiments/StackedModalPage/StackedModalPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -44,6 +45,7 @@ const routes = [
   { path: "/exp/progressive-blur", element: <ProgressiveBlurPage /> },
   { path: "/exp/gallery", element: <SliderGalleryPage /> },
   { path: "/tldr", element: <TLDR /> },
+  { path: "/exp/stacked-modal", element: <StackedModalPage /> },
 ];
 
 function App() {
